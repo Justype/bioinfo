@@ -1,0 +1,111 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Bioinfo]]></title><description><![CDATA[Obsidian digital garden]]></description><link>http://github.com/dylang/node-rss</link><image><url>lib\media\favicon.png</url><title>Bioinfo</title><link/></image><generator>Webpage HTML Export plugin for Obsidian</generator><lastBuildDate>Tue, 31 Dec 2024 03:06:12 GMT</lastBuildDate><atom:link href="lib\rss.xml" rel="self" type="application/rss+xml"/><pubDate>Tue, 31 Dec 2024 03:06:12 GMT</pubDate><ttl>60</ttl><dc:creator/><item><title><![CDATA[Biochemistry]]></title><description><![CDATA[ 
+ ]]></description><link>biochem\biochemistry.html</link><guid isPermaLink="false">biochem/Biochemistry.md</guid><pubDate>Mon, 30 Dec 2024 14:04:47 GMT</pubDate></item><item><title><![CDATA[Biomedical Science]]></title><description><![CDATA[ 
+ ]]></description><link>biomed\biomedical-science.html</link><guid isPermaLink="false">biomed/Biomedical Science.md</guid><pubDate>Tue, 31 Dec 2024 01:48:40 GMT</pubDate></item><item><title><![CDATA[HPC]]></title><description><![CDATA[<a class="tag" href="?query=tag:hpc" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#hpc</a> 
+ <br><a href=".?query=tag:hpc" class="tag" target="_blank" rel="noopener nofollow">#hpc</a> ]]></description><link>linux-and-hpc\hpc\hpc.html</link><guid isPermaLink="false">linux-and-hpc/hpc/HPC.md</guid><pubDate>Tue, 31 Dec 2024 02:34:16 GMT</pubDate></item><item><title><![CDATA[Singularity]]></title><description><![CDATA[ 
+ ]]></description><link>linux-and-hpc\hpc\singularity.html</link><guid isPermaLink="false">linux-and-hpc/hpc/Singularity.md</guid><pubDate>Tue, 31 Dec 2024 02:35:36 GMT</pubDate></item><item><title><![CDATA[Slurm]]></title><description><![CDATA[<a class="tag" href="?query=tag:hpc" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#hpc</a> <a class="tag" href="?query=tag:job-manager" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#job-manager</a> 
+ <br><a href=".?query=tag:hpc" class="tag" target="_blank" rel="noopener nofollow">#hpc</a> <a href=".?query=tag:job-manager" class="tag" target="_blank" rel="noopener nofollow">#job-manager</a>]]></description><link>linux-and-hpc\hpc\slurm.html</link><guid isPermaLink="false">linux-and-hpc/hpc/Slurm.md</guid><pubDate>Tue, 31 Dec 2024 02:34:04 GMT</pubDate></item><item><title><![CDATA[SSH]]></title><description><![CDATA[<a class="tag" href="?query=tag:ssh" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#ssh</a> 
+ <br><a href=".?query=tag:ssh" class="tag" target="_blank" rel="noopener nofollow">#ssh</a><br>SSH (Secure Shell) is a protocol used to securely access and manage remote systems over an encrypted connection.<br>quick guide:<br>
+<br>ssh [username]@[hostname or IP address]
+<br>scp [source] [username]@[hostname]:[destination] copying files with scp (-r if folder)
+<br>Key Authentication (no password required)
+
+<br>ssh-keygen and ssh-copy-id
+<br>ssh -i [private key] [username]@[host]
+
+
+<br>Port Forwarding:
+
+<br>-L [local_port]:[remote_host]:[remote_port] Local
+<br>-R [remote_port]:[local_host]:[local_port] Remote
+
+
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/SSH-1458695f3ace81aa8913d9e486798958?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/SSH-1458695f3ace81aa8913d9e486798958?pvs=21" target="_blank">SSH Config File</a>: ~/.ssh/config
+<br><br>
+<br><a data-tooltip-position="top" aria-label="https://filezilla-project.org/" rel="noopener nofollow" class="external-link" href="https://filezilla-project.org/" target="_blank">FileZilla</a> (Uncheck recommended software when installing it)
+<br><a data-tooltip-position="top" aria-label="http://rei.to/carotdav_en.html" rel="noopener nofollow" class="external-link" href="http://rei.to/carotdav_en.html" target="_blank">CarotDAV</a>
+<br><br>
+<br>Connecting to a Remote Server:
+<br>ssh [username]@[hostname or IP address]
+<br>
+<br>Specifying a Port (if not the default 22):
+<br>ssh -p [port] [username]@[hostname]
+<br>
+<br>Executing a Command on the Remote Server:
+<br>ssh [username]@[hostname] [command]
+<br>Example:<br>ssh user@localhost "ls -l /var/www"
+<br>
+<br>Copying Files with scp: Securely copy files between local and remote machines:
+<br>scp [local file] [username]@[hostname]:[destination]
+scp [username]@[hostname]:[remote file] [local destination]
+# folder with -r
+<br><br>SSH key authentication provides a more secure and convenient alternative to password-based login.<br>
+<br>Generate SSH Key Pair: On your local machine, run:
+<br>ssh-keygen -t rsa -b 4096
+<br>This creates a public key (id_rsa.pub) and private key (id_rsa) in the ~/.ssh/ directory.<br>
+<br>Add SSH Key to SSH Agent:
+<br>eval "$(ssh-agent -s)" # start SSH agnet in the background
+ssh-add ~/.ssh/id_rsa
+<br>
+<br>Copy the Public Key to the Remote Server:
+<br>ssh-copy-id [username]@[hostname] # NOT Working on Windows
+<br>On Windows you need to manually append the public key to the ~/.ssh/authorized_keys file on the remote server.<br>
+<br>Set Proper Permissions: Ensure correct file permissions on the server:
+<br>chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+<br>
+<br>Login Using the Key: After setup, SSH will automatically use the key pair for authentication:
+<br>ssh [username]@[hostname]
+scp [local file] [username]@[hostname]:[destination]
+rsync -r [local folder] [username]@[hostname]:[destination]
+<br><br>SSH can forward ports for secure communication between local and remote systems.<br>
+<br>Local Port Forwarding (Access Remote Services Locally):
+<br>ssh -L [local_port]:[remote_host]:[remote_port] [username]@[hostname]
+<br>Example:<br>ssh -L 8080:localhost:8080 user@192.168.1.100
+<br>This forwards your local port 8080 to the remote server's port 80.<br>
+<br>Remote Port Forwarding (Expose Local Services to Remote Systems):
+<br>This is very helpful when using cluster (expose port to login node).<br>ssh -R [remote_port]:[local_host]:[local_port] [username]@[hostname]
+<br>Example:<br>ssh -R 9090:localhost:3000 log-1 # same username as whoami
+<br>This forwards the login node's port 9090 to compute node port 3000.<br><br>
+<br>Configuration File: You can simplify SSH commands by using a configuration file (~/.ssh/config):
+<br>Host myserver
+    HostName 192.168.1.100
+    User user
+    Port 2222  # most of time you don't need this, default 22
+    IdentityFile ~/.ssh/id_rsa
+    LocalForward 8080:localhost:8080
+<br>Then connect with:<br>ssh myserver
+]]></description><link>linux-and-hpc\hpc\ssh.html</link><guid isPermaLink="false">linux-and-hpc/hpc/SSH.md</guid><pubDate>Tue, 31 Dec 2024 02:53:32 GMT</pubDate></item><item><title><![CDATA[Common Linux Commands]]></title><description><![CDATA[ 
+ ]]></description><link>linux-and-hpc\linux\common-linux-commands.html</link><guid isPermaLink="false">linux-and-hpc/linux/Common Linux Commands.md</guid><pubDate>Tue, 31 Dec 2024 02:29:37 GMT</pubDate></item><item><title><![CDATA[Linux]]></title><description><![CDATA[<a class="tag" href="?query=tag:linux" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#linux</a> 
+ <br><a href=".?query=tag:linux" class="tag" target="_blank" rel="noopener nofollow">#linux</a> <br>🐧 Linux is an open-source, Unix-like operating system kernel, first released by Linus Torvalds in 1991.<br>Personally, Linux is great for servers but bad for desktops. It lacks a lot of software: Acrobat, Office, and official cloud drive clients. You can find alternatives. But they are not as good as the original one.<br><br>
+<br>Large Servers or Clusters prefer Red Hat for its security and long-term support.
+<br>For personal use, choose whatever you want. (Ubuntu for beginner)
+<br><br><br>To use Linux server, you need to know:<br>
+<br><a data-href="SSH" href="linux-and-hpc\hpc\ssh.html" class="internal-link" target="_self" rel="noopener nofollow">SSH</a>
+<br><a data-href="Common Linux Commands" href="linux-and-hpc\linux\common-linux-commands.html" class="internal-link" target="_self" rel="noopener nofollow">Common Linux Commands</a>
+<br><a data-href="Linux Permissions" href="linux-and-hpc\linux\linux-permissions.html" class="internal-link" target="_self" rel="noopener nofollow">Linux Permissions</a>
+<br>You may need to know:<br>
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/bashrc-vs-bash_profile-1568695f3ace8034acfce7751d49395f?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/bashrc-vs-bash_profile-1568695f3ace8034acfce7751d49395f?pvs=21" target="_blank">bashrc vs bash_profile</a>
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/Bash-Script-1568695f3ace80a5983ff208270523bb?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Bash-Script-1568695f3ace80a5983ff208270523bb?pvs=21" target="_blank">Bash Script</a>
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/Symbolic-Link-1458695f3ace805cb2eec63b2cbabf0f?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Symbolic-Link-1458695f3ace805cb2eec63b2cbabf0f?pvs=21" target="_blank">Symbolic Link</a> (symlink)
+<br>Other Tips:<br>
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/Linux-stdin-stdout-stderr-1458695f3ace81e18e1acc1d97fa5647?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Linux-stdin-stdout-stderr-1458695f3ace81e18e1acc1d97fa5647?pvs=21" target="_blank">Linux stdin stdout stderr</a>
+]]></description><link>linux-and-hpc\linux\linux.html</link><guid isPermaLink="false">linux-and-hpc/linux/Linux.md</guid><pubDate>Tue, 31 Dec 2024 02:29:57 GMT</pubDate></item><item><title><![CDATA[Linux Permissions]]></title><description><![CDATA[<a class="tag" href="?query=tag:linux" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#linux</a> <a class="tag" href="?query=tag:permission" style="background-color: rgb(4, 108, 116); color: white; font-weight: 700; border: none; border-radius: 1em; padding: 0.2em 0.5em;">#permission</a> 
+ <br><a href=".?query=tag:linux" class="tag" target="_blank" rel="noopener nofollow">#linux</a> <a href=".?query=tag:permission" class="tag" target="_blank" rel="noopener nofollow">#permission</a> ]]></description><link>linux-and-hpc\linux\linux-permissions.html</link><guid isPermaLink="false">linux-and-hpc/linux/Linux Permissions.md</guid><pubDate>Tue, 31 Dec 2024 02:35:21 GMT</pubDate></item><item><title><![CDATA[Rclone]]></title><description><![CDATA[ 
+ ]]></description><link>linux-and-hpc\tools\rclone.html</link><guid isPermaLink="false">linux-and-hpc/tools/Rclone.md</guid><pubDate>Tue, 31 Dec 2024 02:36:21 GMT</pubDate></item><item><title><![CDATA[Linux and HPC]]></title><description><![CDATA[ 
+ <br><a data-tooltip-position="top" aria-label="Linux" data-href="Linux" href="linux-and-hpc\linux\linux.html" class="internal-link" target="_self" rel="noopener nofollow">🐧Linux</a> and High-Performance Computing (<a data-href="HPC" href="linux-and-hpc\hpc\hpc.html" class="internal-link" target="_self" rel="noopener nofollow">HPC</a>) have become essential tools to analyze vast amounts of data.<br><br><br><br>You don’t have sudo privilege on HPC. Other ways to manage packages and environments:<br>
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/Miniconda-1448695f3ace810d87e8f08295e7061c?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Miniconda-1448695f3ace810d87e8f08295e7061c?pvs=21" target="_blank">Miniconda</a> or <a data-tooltip-position="top" aria-label="https://www.notion.so/Micromamba-1458695f3ace80bc8edeee06a2f31631?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Micromamba-1458695f3ace80bc8edeee06a2f31631?pvs=21" target="_blank">Micromamba</a> with <a data-tooltip-position="top" aria-label="https://bioconda.github.io/" rel="noopener nofollow" class="external-link" href="https://bioconda.github.io/" target="_blank">bioconda</a>
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/Environment-Modules-1458695f3ace819985c0e3c573441fb3?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Environment-Modules-1458695f3ace819985c0e3c573441fb3?pvs=21" target="_blank"><code></code></a>Environment Modules or <a data-tooltip-position="top" aria-label="https://www.notion.so/Lmod-1458695f3ace81878d5ecb3e9159c1bf?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Lmod-1458695f3ace81878d5ecb3e9159c1bf?pvs=21" target="_blank">Lmod</a>
+<br>To run container/image, use <a data-tooltip-position="top" aria-label="https://www.notion.so/Singularity-1448695f3ace81c8b27bc671fe3ee3ae?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Singularity-1448695f3ace81c8b27bc671fe3ee3ae?pvs=21" target="_blank">Singularity</a>
+<br><br>
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/Bash-Script-1568695f3ace80a5983ff208270523bb?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Bash-Script-1568695f3ace80a5983ff208270523bb?pvs=21" target="_blank">Bash Script</a>
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/Run-Jobs-in-Background-1488695f3ace80a39b71d24f93a8475f?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Run-Jobs-in-Background-1488695f3ace80a39b71d24f93a8475f?pvs=21" target="_blank">Run Jobs in Background</a>
+<br><a data-tooltip-position="top" aria-label="https://www.notion.so/Linux-Permissions-1458695f3ace80959a98ebbbd372872a?pvs=21" rel="noopener nofollow" class="external-link" href="https://www.notion.so/Linux-Permissions-1458695f3ace80959a98ebbbd372872a?pvs=21" target="_blank">Linux Permissions</a>
+]]></description><link>linux-and-hpc\linux-and-hpc.html</link><guid isPermaLink="false">linux-and-hpc/Linux and HPC.md</guid><pubDate>Tue, 31 Dec 2024 02:36:53 GMT</pubDate></item><item><title><![CDATA[Molecular Cell Biology]]></title><description><![CDATA[ 
+ ]]></description><link>molecular-cell-bio\molecular-cell-biology.html</link><guid isPermaLink="false">molecular-cell-bio/Molecular Cell Biology.md</guid><pubDate>Mon, 30 Dec 2024 14:05:01 GMT</pubDate></item><item><title><![CDATA[Programming]]></title><description><![CDATA[ 
+ ]]></description><link>programming\programming.html</link><guid isPermaLink="false">programming/Programming.md</guid><pubDate>Mon, 30 Dec 2024 14:04:52 GMT</pubDate></item><item><title><![CDATA[Sequencing]]></title><description><![CDATA[ 
+ ]]></description><link>seq\sequencing.html</link><guid isPermaLink="false">seq/Sequencing.md</guid><pubDate>Mon, 30 Dec 2024 14:04:56 GMT</pubDate></item><item><title><![CDATA[Statistics]]></title><description><![CDATA[ 
+ ]]></description><link>stat\statistics.html</link><guid isPermaLink="false">stat/Statistics.md</guid><pubDate>Tue, 31 Dec 2024 02:26:20 GMT</pubDate></item><item><title><![CDATA[Bioinfo]]></title><description><![CDATA[ 
+ <br>Hello everyone! Thank you for visiting this site and I hope you enjoy it.<br>This site covers the following topics based on my personal knowledge base:<br><br>My goal for this site/repo:<br>
+<br>Short and concise!
+<br>Comprehensive: as much knowledge as possible!
+]]></description><link>bioinfo.html</link><guid isPermaLink="false">Bioinfo.md</guid><pubDate>Tue, 31 Dec 2024 02:26:09 GMT</pubDate></item></channel></rss>

@@ -1,0 +1,9 @@
+{
+	"nodes":[
+		{"id":"56ac2b8e3d859897","x":-81,"y":-65,"width":250,"height":60,"type":"text","text":"Test"},
+		{"id":"0f50c5782087b6af","x":-81,"y":80,"width":250,"height":60,"type":"text","text":"[[Biomedical Science]]"}
+	],
+	"edges":[
+		{"id":"826747f5c1f601c2","fromNode":"56ac2b8e3d859897","fromSide":"bottom","toNode":"0f50c5782087b6af","toSide":"top"}
+	]
+}

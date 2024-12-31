@@ -1,4 +1,4 @@
-#linux 
+#linux
 
 🐧 Linux is an **open-source**, Unix-like operating **system kernel**, first released by **Linus Torvalds** in 1991.
 
@@ -12,7 +12,7 @@ Personally, Linux is great for servers but bad for desktops. It lacks a lot of s
 | Distro     | Based on | Package Manager | Use Case             |
 | ---------- | -------- | --------------- | -------------------- |
 | Debian     |          | `apt`           | Server, IoT          |
-| **Ubuntu** | Debian   | `apt`           | Server, IoT, Desktop |
+| [[Ubuntu]] | Debian   | `apt`           | Server, IoT, Desktop |
 | **RedHat** | Fedora   | `dnf`           | Server               |
 | Rocky      | RedHat   | `dnf`           | Server               |
 | Arch       |          | `pacman`        | Desktop              |
@@ -24,11 +24,12 @@ To use Linux server, you need to know:
 - [[SSH]]
 - [[Common Linux Commands]]
 - [[Linux Permissions]]
+- [[Environment Variables]]
 
 You may need to know:
-- [bashrc vs bash_profile](https://www.notion.so/bashrc-vs-bash_profile-1568695f3ace8034acfce7751d49395f?pvs=21)
-- [Bash Script](https://www.notion.so/Bash-Script-1568695f3ace80a5983ff208270523bb?pvs=21)
-- [Symbolic Link](https://www.notion.so/Symbolic-Link-1458695f3ace805cb2eec63b2cbabf0f?pvs=21) (symlink)
+- [[bashrc vs bash_profile]]
+- [[Bash Script]]
+- [[Symbolic Link]] (symlink)
 
 Other Tips:
-- [Linux stdin stdout stderr](https://www.notion.so/Linux-stdin-stdout-stderr-1458695f3ace81e18e1acc1d97fa5647?pvs=21)
+- [[stdin stdout stderr]]

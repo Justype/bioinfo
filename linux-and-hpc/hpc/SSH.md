@@ -12,7 +12,7 @@ quick guide:
 - Port Forwarding:
     - `-L [local_port]:[remote_host]:[remote_port]` Local
     - `-R [remote_port]:[local_host]:[local_port]` Remote
-- [SSH Config File](https://www.notion.so/SSH-1458695f3ace81aa8913d9e486798958?pvs=21): `~/.ssh/config`
+- [[#SSH Config]]: `~/.ssh/config`
 
 ## SSH Apps for Transferring Files
 
@@ -26,7 +26,7 @@ quick guide:
 ```bash
 ssh [username]@[hostname or IP address]
 ```
-   
+
 2. **Specifying a Port (if not the default 22)**:
 
 ```bash
@@ -44,7 +44,7 @@ Example:
 ```bash
 ssh user@localhost "ls -l /var/www"
 ```
-    
+
 4. **Copying Files with `scp`**: Securely copy files between local and remote machines:
 
 ```bash
@@ -71,7 +71,7 @@ This creates a public key (`id_rsa.pub`) and private key (`id_rsa`) in the `~/.s
 eval "$(ssh-agent -s)" # start SSH agnet in the background
 ssh-add ~/.ssh/id_rsa
 ```
-    
+
 3. **Copy the Public Key to the Remote Server**:
 
 ```bash
@@ -128,7 +128,6 @@ ssh -R 9090:localhost:3000 log-1 # same username as whoami
 ```
 
 This forwards the login node's port `9090` to compute node port `3000`.
-    
 
 # SSH Config
 

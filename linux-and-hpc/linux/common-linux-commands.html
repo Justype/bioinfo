@@ -11,9 +11,414 @@
 		<meta property="og:url" content="linux-and-hpc/linux/common-linux-commands.html">
 		<meta property="og:image" content="undefined">
 		<meta property="og:site_name" content="Bioinfo">
-		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="preload" href="lib/styles/other-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/other-plugins.css"></noscript><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript></head><body class="publish css-settings-manager theme-light show-inline-title show-ribbon"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="Common Linux Commands">Common Linux Commands</h1><div class="mod-footer mod-ui"></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript></head><body class="publish css-settings-manager show-inline-title show-ribbon theme-light"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="Common Linux Commands">Common Linux Commands</h1><div class="el-p"><p dir="auto"><a href="?query=tag:linux" class="tag" target="_blank" rel="noopener nofollow">#linux</a> <a href="?query=tag:unix" class="tag" target="_blank" rel="noopener nofollow">#unix</a> <a href="?query=tag:gpt" class="tag" target="_blank" rel="noopener nofollow">#gpt</a></p></div><div class="el-h2 heading-wrapper"><h2 data-heading="File and Directory Management **(REQUIRED TO KNOW)**" dir="auto" class="heading" id="File_and_Directory_Management_**(REQUIRED_TO_KNOW)**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>File and Directory Management <strong>(REQUIRED TO KNOW)</strong></h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>ls</code></td>
+<td dir="ltr">Lists files and directories in the current directory.</td>
+<td dir="ltr"><code>ls -l</code> (detailed list)</td>
+</tr>
+<tr>
+<td dir="ltr"><code>cd</code></td>
+<td dir="ltr">Changes the current directory.</td>
+<td dir="ltr"><code>cd /path/to/directory</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>pwd</code></td>
+<td dir="ltr">Prints the current working directory.</td>
+<td dir="ltr"><code>pwd</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>mkdir</code></td>
+<td dir="ltr">Creates a new directory.</td>
+<td dir="ltr"><code>mkdir new_folder</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>rmdir</code></td>
+<td dir="ltr">Removes an empty directory.</td>
+<td dir="ltr"><code>rmdir empty_folder</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>rm</code></td>
+<td dir="ltr">Removes files or directories.</td>
+<td dir="ltr"><code>rm file.txt</code>, <code>rm -r folder</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>cp</code></td>
+<td dir="ltr">Copies files or directories.</td>
+<td dir="ltr"><code>cp source.txt destination.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>mv</code></td>
+<td dir="ltr">Moves or renames files or directories.</td>
+<td dir="ltr"><code>mv old_name.txt new_name.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>touch</code></td>
+<td dir="ltr">Creates an empty file or updates the timestamp of a file.</td>
+<td dir="ltr"><code>touch new_file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>find</code></td>
+<td dir="ltr">Searches for files and directories.</td>
+<td dir="ltr"><code>find /path -name "*.txt"</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="File Viewing **(REQUIRED TO KNOW)**" dir="auto" class="heading" id="File_Viewing_**(REQUIRED_TO_KNOW)**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>File Viewing <strong>(REQUIRED TO KNOW)</strong></h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>cat</code></td>
+<td dir="ltr">Displays the contents of a file.</td>
+<td dir="ltr"><code>cat file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>more</code></td>
+<td dir="ltr">Paginates through a file's content.</td>
+<td dir="ltr"><code>more file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>less</code></td>
+<td dir="ltr">Similar to <code>more</code>, but allows backward navigation.</td>
+<td dir="ltr"><code>less file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>head</code></td>
+<td dir="ltr">Displays the first lines of a file.</td>
+<td dir="ltr"><code>head -n 10 file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>tail</code></td>
+<td dir="ltr">Displays the last lines of a file.</td>
+<td dir="ltr"><code>tail -n 10 file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>wc</code></td>
+<td dir="ltr">Counts lines, words, and characters in a file.</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="ltr"><code>wc -l</code> number of lines</td>
+<td dir="ltr"><code>wc file.txt</code>, <code>wc -l file.txt</code></td>
+<td dir="auto"></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="File and Text Processing" dir="auto" class="heading" id="File_and_Text_Processing"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>File and Text Processing</h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>grep</code></td>
+<td dir="ltr">Searches for patterns in text.</td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="ltr"><code>grep -v</code> reverse search</td>
+<td dir="ltr"><code>grep "pattern" file.txt</code></td>
+<td dir="auto"></td>
+</tr>
+<tr>
+<td dir="ltr"><code>sed</code></td>
+<td dir="ltr">Stream editor for search and replace.</td>
+<td dir="ltr"><code>sed 's/old/new/' file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>awk</code></td>
+<td dir="ltr">Text processing and data extraction.</td>
+<td dir="ltr"><code>awk '{print $1}' file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>sort</code></td>
+<td dir="ltr">Sorts lines in a file.</td>
+<td dir="ltr"><code>sort file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>uniq</code></td>
+<td dir="ltr">Removes duplicate lines.</td>
+<td dir="ltr"><code>uniq sorted_file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>cut</code></td>
+<td dir="ltr">Extracts specific columns or fields.</td>
+<td dir="ltr"><code>cut -d',' -f2 file.csv</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Archiving and Compression **(REQUIRED TO KNOW)**" dir="auto" class="heading" id="Archiving_and_Compression_**(REQUIRED_TO_KNOW)**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Archiving and Compression <strong>(REQUIRED TO KNOW)</strong></h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>tar</code></td>
+<td dir="ltr">Archives files into a tarball.</td>
+<td dir="ltr"><code>tar -cvf archive.tar file1 file2</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>gzip</code></td>
+<td dir="ltr">Compresses files using gzip.</td>
+<td dir="ltr"><code>gzip file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>gunzip</code></td>
+<td dir="ltr">Decompresses gzip files.</td>
+<td dir="ltr"><code>gunzip file.txt.gz</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>zip</code></td>
+<td dir="ltr">Compresses files into a ZIP archive.</td>
+<td dir="ltr"><code>zip archive.zip file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>unzip</code></td>
+<td dir="ltr">Extracts files from a ZIP archive.</td>
+<td dir="ltr"><code>unzip archive.zip</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Networking" dir="auto" class="heading" id="Networking"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Networking</h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>ping</code></td>
+<td dir="ltr">Checks connectivity to a host.</td>
+<td dir="ltr"><code>ping google.com</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>wget</code></td>
+<td dir="ltr">Downloads files from the internet.</td>
+<td dir="ltr"><code>wget &lt;http://example.com/file.txt</code>&gt;</td>
+</tr>
+<tr>
+<td dir="ltr"><code>curl</code></td>
+<td dir="ltr">Transfers data from or to a server.</td>
+<td dir="ltr"><code>curl &lt;http://example.com</code>&gt;</td>
+</tr>
+<tr>
+<td dir="ltr"><code>netstat</code></td>
+<td dir="ltr">Displays network connections (use <code>ss</code> for newer systems).</td>
+<td dir="ltr"><code>netstat -tuln</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>scp</code></td>
+<td dir="ltr">Securely copies files between systems.</td>
+<td dir="ltr"><code>scp file.txt user@host:/path/to/destination</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>ssh</code></td>
+<td dir="ltr">Logs into a remote system.</td>
+<td dir="ltr"><code>ssh user@host</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Permissions and Ownership, see [[Linux Permissions]]" dir="auto" class="heading" id="Permissions_and_Ownership,_see_[[Linux_Permissions]]"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Permissions and Ownership, see <a data-href="Linux Permissions" href="linux-and-hpc/linux/linux-permissions.html" class="internal-link" target="_self" rel="noopener nofollow">Linux Permissions</a></h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>chmod</code></td>
+<td dir="ltr">Changes file permissions.</td>
+<td dir="ltr"><code>chmod 755 file.sh</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>chown</code></td>
+<td dir="ltr">Changes file ownership.</td>
+<td dir="ltr"><code>chown user:group file.txt</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>umask</code></td>
+<td dir="ltr">Sets default file permissions.</td>
+<td dir="ltr"><code>umask 022</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Process Management" dir="auto" class="heading" id="Process_Management"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Process Management</h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>ps</code></td>
+<td dir="ltr">Displays running processes.</td>
+<td dir="ltr"><code>ps aux</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>top</code></td>
+<td dir="ltr">Interactive view of system processes.</td>
+<td dir="ltr"><code>top</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>htop</code></td>
+<td dir="ltr">Advanced version of <code>top</code> (if installed).</td>
+<td dir="ltr"><code>htop</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>kill</code></td>
+<td dir="ltr">Sends a signal to a process (e.g., terminate).</td>
+<td dir="ltr"><code>kill 12345</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>killall</code></td>
+<td dir="ltr">Kills processes by name.</td>
+<td dir="ltr"><code>killall firefox</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>jobs</code></td>
+<td dir="ltr">Lists background jobs.</td>
+<td dir="ltr"><code>jobs</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>fg</code></td>
+<td dir="ltr">Brings a background job to the foreground.</td>
+<td dir="ltr"><code>fg %1</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>bg</code></td>
+<td dir="ltr">Resumes a background job.</td>
+<td dir="ltr"><code>bg %1</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="System Monitoring and Management" dir="auto" class="heading" id="System_Monitoring_and_Management"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>System Monitoring and Management</h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>df</code></td>
+<td dir="ltr">Shows disk usage.</td>
+<td dir="ltr"><code>df -h</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>du</code></td>
+<td dir="ltr">Displays the size of directories and files.</td>
+<td dir="ltr"><code>du -sh folder</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>free</code></td>
+<td dir="ltr">Shows memory usage.</td>
+<td dir="ltr"><code>free -h</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>uptime</code></td>
+<td dir="ltr">Displays system uptime and load.</td>
+<td dir="ltr"><code>uptime</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>uname</code></td>
+<td dir="ltr">Displays system information.</td>
+<td dir="ltr"><code>uname -a</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>dmesg</code></td>
+<td dir="ltr">Prints system boot and kernel messages.</td>
+<td dir="ltr">`dmesg</td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="User Management" dir="auto" class="heading" id="User_Management"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>User Management</h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>whoami</code></td>
+<td dir="ltr">Prints the current user.</td>
+<td dir="ltr"><code>whoami</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>who</code></td>
+<td dir="ltr">Displays logged-in users.</td>
+<td dir="ltr"><code>who</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>adduser</code></td>
+<td dir="ltr">Adds a new user.</td>
+<td dir="ltr"><code>adduser new_user</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>passwd</code></td>
+<td dir="ltr">Changes a user’s password.</td>
+<td dir="ltr"><code>passwd</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Miscellaneous" dir="auto" class="heading" id="Miscellaneous"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Miscellaneous</h2><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Command</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>alias</code></td>
+<td dir="ltr">Creates a shortcut for a command.</td>
+<td dir="ltr"><code>alias ll='ls -l'</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>history</code></td>
+<td dir="ltr">Displays the command history.</td>
+<td dir="ltr"><code>history</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>echo</code></td>
+<td dir="ltr">Prints text to the terminal.</td>
+<td dir="ltr"><code>echo "Hello, World!"</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>date</code></td>
+<td dir="ltr">Displays or sets the system date and time.</td>
+<td dir="ltr"><code>date</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>clear</code></td>
+<td dir="ltr">Clears the terminal screen.</td>
+<td dir="ltr"><code>clear</code></td>
+</tr>
+</tbody>
+</table></div><div class="mod-footer mod-ui"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
 		<div class="graph-view-container">
 			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
 			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
 		</div>
-		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#Common Linux Commands"><div class="tree-item-contents heading-link" heading-name="Common Linux Commands"><span class="tree-item-title">Common Linux Commands</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#Common Linux Commands"><div class="tree-item-contents heading-link" heading-name="Common Linux Commands"><span class="tree-item-title">Common Linux Commands</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#File_and_Directory_Management_**(REQUIRED_TO_KNOW)**"><div class="tree-item-contents heading-link" heading-name="File and Directory Management **(REQUIRED TO KNOW)**"><span class="tree-item-title">File and Directory Management <strong>(REQUIRED TO KNOW)</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#File_Viewing_**(REQUIRED_TO_KNOW)**"><div class="tree-item-contents heading-link" heading-name="File Viewing **(REQUIRED TO KNOW)**"><span class="tree-item-title">File Viewing <strong>(REQUIRED TO KNOW)</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#File_and_Text_Processing"><div class="tree-item-contents heading-link" heading-name="File and Text Processing"><span class="tree-item-title">File and Text Processing</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#Archiving_and_Compression_**(REQUIRED_TO_KNOW)**"><div class="tree-item-contents heading-link" heading-name="Archiving and Compression **(REQUIRED TO KNOW)**"><span class="tree-item-title">Archiving and Compression <strong>(REQUIRED TO KNOW)</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#Networking"><div class="tree-item-contents heading-link" heading-name="Networking"><span class="tree-item-title">Networking</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#Permissions_and_Ownership,_see_[[Linux_Permissions]]"><div class="tree-item-contents heading-link" heading-name="Permissions and Ownership, see [[Linux Permissions]]"><span class="tree-item-title">Permissions and Ownership, see <a data-href="Linux Permissions" href="Linux Permissions" class="internal-link" target="_blank" rel="noopener nofollow">Linux Permissions</a></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#Process_Management"><div class="tree-item-contents heading-link" heading-name="Process Management"><span class="tree-item-title">Process Management</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#System_Monitoring_and_Management"><div class="tree-item-contents heading-link" heading-name="System Monitoring and Management"><span class="tree-item-title">System Monitoring and Management</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#User_Management"><div class="tree-item-contents heading-link" heading-name="User Management"><span class="tree-item-title">User Management</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\common-linux-commands.html#Miscellaneous"><div class="tree-item-contents heading-link" heading-name="Miscellaneous"><span class="tree-item-title">Miscellaneous</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

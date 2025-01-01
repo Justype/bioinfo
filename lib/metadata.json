@@ -1,27 +1,45 @@
 {
   "vaultName": "Bioinfo",
-  "lastExport": 1735614372761,
+  "lastExport": 1735689247675,
   "pluginVersion": "1.8.01",
-  "validBodyClasses": "publish css-settings-manager theme-light show-inline-title show-ribbon",
+  "validBodyClasses": "publish css-settings-manager show-inline-title show-ribbon theme-light",
   "useCustomHeadContent": false,
-  "useCustomFavicon": false,
+  "useCustomFavicon": true,
   "files": [
     "biochem/Biochemistry.md",
     "biomed/Biomedical Science.md",
+    "genetics-genomics/Genetics and Genomics.md",
     "linux-and-hpc/hpc/HPC.md",
     "linux-and-hpc/hpc/Singularity.md",
     "linux-and-hpc/hpc/Slurm.md",
     "linux-and-hpc/hpc/SSH.md",
+    "linux-and-hpc/linux/ubuntu/apt.md",
+    "linux-and-hpc/linux/ubuntu/R Packages Installation Troubleshooting.md",
+    "linux-and-hpc/linux/ubuntu/Remove snap from Ubuntu.md",
+    "linux-and-hpc/linux/ubuntu/Ubuntu.md",
+    "linux-and-hpc/linux/Bash Script.md",
+    "linux-and-hpc/linux/bashrc vs bash_profile.md",
     "linux-and-hpc/linux/Common Linux Commands.md",
+    "linux-and-hpc/linux/Environment Variables.md",
     "linux-and-hpc/linux/Linux.md",
     "linux-and-hpc/linux/Linux Permissions.md",
+    "linux-and-hpc/linux/Run Jobs in Background.md",
+    "linux-and-hpc/linux/stdin stdout stderr.md",
+    "linux-and-hpc/linux/Symbolic Link.md",
+    "linux-and-hpc/linux/TTY.md",
+    "linux-and-hpc/tools/Environment Modules.md",
+    "linux-and-hpc/tools/Gzip.md",
+    "linux-and-hpc/tools/Lmod.md",
+    "linux-and-hpc/tools/Micromamba.md",
+    "linux-and-hpc/tools/Miniconda.md",
     "linux-and-hpc/tools/Rclone.md",
+    "linux-and-hpc/tools/Tmux.md",
     "linux-and-hpc/Linux and HPC.md",
+    "ml/Machine Learning.md",
     "molecular-cell-bio/Molecular Cell Biology.md",
     "programming/Programming.md",
     "seq/Sequencing.md",
     "stat/Statistics.md",
-    "Test/Test.canvas",
     "Bioinfo.md",
     "lib/scripts/graph-wasm.wasm",
     "lib/fonts/94f2f163d4b698242fef.otf",
@@ -49,7 +67,6 @@
     "lib/media/favicon.png",
     "lib/scripts/graph-data.js",
     "lib/styles/obsidian.css",
-    "lib/styles/other-plugins.css",
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
     "lib/styles/supported-plugins.css",
@@ -82,7 +99,6 @@
     "lib/media/favicon.png",
     "lib/scripts/graph-data.js",
     "lib/styles/obsidian.css",
-    "lib/styles/other-plugins.css",
     "lib/styles/theme.css",
     "lib/styles/global-variable-styles.css",
     "lib/styles/supported-plugins.css",
@@ -90,194 +106,188 @@
   ],
   "fileInfo": {
     "lib/scripts/graph-wasm.wasm": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 23377,
       "exportedPath": "lib/scripts/graph-wasm.wasm",
       "dependencies": []
     },
     "lib/fonts/94f2f163d4b698242fef.otf": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 66800,
       "exportedPath": "lib/fonts/94f2f163d4b698242fef.otf",
       "dependencies": []
     },
     "lib/fonts/72505e6a122c6acd5471.woff2": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 104232,
       "exportedPath": "lib/fonts/72505e6a122c6acd5471.woff2",
       "dependencies": []
     },
     "lib/fonts/2d5198822ab091ce4305.woff2": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 104332,
       "exportedPath": "lib/fonts/2d5198822ab091ce4305.woff2",
       "dependencies": []
     },
     "lib/fonts/c8ba52b05a9ef10f4758.woff2": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 98868,
       "exportedPath": "lib/fonts/c8ba52b05a9ef10f4758.woff2",
       "dependencies": []
     },
     "lib/fonts/cb10ffd7684cd9836a05.woff2": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 106876,
       "exportedPath": "lib/fonts/cb10ffd7684cd9836a05.woff2",
       "dependencies": []
     },
     "lib/fonts/b5f0f109bc88052d4000.woff2": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 105804,
       "exportedPath": "lib/fonts/b5f0f109bc88052d4000.woff2",
       "dependencies": []
     },
     "lib/fonts/cbe0ae49c52c920fd563.woff2": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 106108,
       "exportedPath": "lib/fonts/cbe0ae49c52c920fd563.woff2",
       "dependencies": []
     },
     "lib/fonts/535a6cf662596b3bd6a6.woff2": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 111708,
       "exportedPath": "lib/fonts/535a6cf662596b3bd6a6.woff2",
       "dependencies": []
     },
     "lib/fonts/70cc7ff27245e82ad414.ttf": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 192740,
       "exportedPath": "lib/fonts/70cc7ff27245e82ad414.ttf",
       "dependencies": []
     },
     "lib/fonts/454577c22304619db035.ttf": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 161376,
       "exportedPath": "lib/fonts/454577c22304619db035.ttf",
       "dependencies": []
     },
     "lib/fonts/52ac8f3034507f1d9e53.ttf": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 191568,
       "exportedPath": "lib/fonts/52ac8f3034507f1d9e53.ttf",
       "dependencies": []
     },
     "lib/fonts/05b618077343fbbd92b7.ttf": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 155288,
       "exportedPath": "lib/fonts/05b618077343fbbd92b7.ttf",
       "dependencies": []
     },
     "lib/fonts/4bb6ac751d1c5478ff3a.woff2": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 7876,
       "exportedPath": "lib/fonts/4bb6ac751d1c5478ff3a.woff2",
       "dependencies": []
     },
     "lib/media/874d8b8e340f75575caa.svg": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 317,
       "exportedPath": "lib/media/874d8b8e340f75575caa.svg",
       "dependencies": []
     },
     "lib/html/file-tree.html": {
-      "modifiedTime": 1735614372761,
-      "sourceSize": 13230,
+      "modifiedTime": 1735689247675,
+      "sourceSize": 20639,
       "exportedPath": "lib/html/file-tree.html",
       "dependencies": []
     },
     "lib/scripts/webpage.js": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 47290,
       "exportedPath": "lib/scripts/webpage.js",
       "dependencies": []
     },
     "lib/scripts/graph-view.js": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 15519,
       "exportedPath": "lib/scripts/graph-view.js",
       "dependencies": []
     },
     "lib/scripts/graph-wasm.js": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 14021,
       "exportedPath": "lib/scripts/graph-wasm.js",
       "dependencies": []
     },
     "lib/scripts/graph-render-worker.js": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 5179,
       "exportedPath": "lib/scripts/graph-render-worker.js",
       "dependencies": []
     },
     "lib/scripts/tinycolor.js": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 29832,
       "exportedPath": "lib/scripts/tinycolor.js",
       "dependencies": []
     },
     "lib/scripts/pixi.js": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 449509,
       "exportedPath": "lib/scripts/pixi.js",
       "dependencies": []
     },
     "lib/scripts/minisearch.js": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 29422,
       "exportedPath": "lib/scripts/minisearch.js",
       "dependencies": []
     },
     "lib/media/favicon.png": {
-      "modifiedTime": 1735614372761,
-      "sourceSize": 1105,
+      "modifiedTime": 1735689247675,
+      "sourceSize": 22402,
       "exportedPath": "lib/media/favicon.png",
       "dependencies": []
     },
     "lib/scripts/graph-data.js": {
-      "modifiedTime": 1735614372761,
-      "sourceSize": 1328,
+      "modifiedTime": 1735689247675,
+      "sourceSize": 2980,
       "exportedPath": "lib/scripts/graph-data.js",
       "dependencies": []
     },
     "lib/styles/obsidian.css": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 131021,
       "exportedPath": "lib/styles/obsidian.css",
       "dependencies": []
     },
     "lib/styles/theme.css": {
-      "modifiedTime": 1735614372761,
-      "sourceSize": 41426,
+      "modifiedTime": 1735689247675,
+      "sourceSize": 29047,
       "exportedPath": "lib/styles/theme.css",
       "dependencies": []
     },
     "lib/styles/global-variable-styles.css": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 236,
       "exportedPath": "lib/styles/global-variable-styles.css",
       "dependencies": []
     },
     "lib/styles/supported-plugins.css": {
-      "modifiedTime": 1735614372761,
-      "sourceSize": 1743,
+      "modifiedTime": 1735689247675,
+      "sourceSize": 1673,
       "exportedPath": "lib/styles/supported-plugins.css",
       "dependencies": []
     },
     "lib/styles/main-styles.css": {
-      "modifiedTime": 1735614372761,
+      "modifiedTime": 1735689247675,
       "sourceSize": 23130,
       "exportedPath": "lib/styles/main-styles.css",
       "dependencies": []
     },
-    "Test/Test.canvas": {
-      "modifiedTime": 1735609995019,
-      "sourceSize": 363,
-      "exportedPath": "test/test.html",
-      "dependencies": []
-    },
     "Bioinfo.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 566,
+      "modifiedTime": 1735669622936,
+      "sourceSize": 1313,
       "exportedPath": "bioinfo.html",
       "dependencies": []
     },
@@ -288,93 +298,213 @@
       "dependencies": []
     },
     "biochem/Biochemistry.md": {
-      "modifiedTime": 1735613642744,
+      "modifiedTime": 1735623985113,
       "sourceSize": 0,
       "exportedPath": "biochem/biochemistry.html",
       "dependencies": []
     },
     "biomed/Biomedical Science.md": {
-      "modifiedTime": 1735613642744,
+      "modifiedTime": 1735624165611,
       "sourceSize": 1,
       "exportedPath": "biomed/biomedical-science.html",
       "dependencies": []
     },
     "linux-and-hpc/hpc/HPC.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 7,
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1524,
       "exportedPath": "linux-and-hpc/hpc/hpc.html",
       "dependencies": []
     },
     "linux-and-hpc/hpc/Singularity.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 0,
+      "modifiedTime": 1735669622936,
+      "sourceSize": 1823,
       "exportedPath": "linux-and-hpc/hpc/singularity.html",
       "dependencies": []
     },
     "linux-and-hpc/hpc/Slurm.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 19,
+      "modifiedTime": 1735689112811,
+      "sourceSize": 4228,
       "exportedPath": "linux-and-hpc/hpc/slurm.html",
       "dependencies": []
     },
     "linux-and-hpc/hpc/SSH.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 3641,
+      "modifiedTime": 1735670256022,
+      "sourceSize": 3556,
       "exportedPath": "linux-and-hpc/hpc/ssh.html",
       "dependencies": []
     },
     "linux-and-hpc/linux/Common Linux Commands.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 0,
+      "modifiedTime": 1735689112811,
+      "sourceSize": 5173,
       "exportedPath": "linux-and-hpc/linux/common-linux-commands.html",
       "dependencies": []
     },
     "linux-and-hpc/linux/Linux.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 1637,
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1339,
       "exportedPath": "linux-and-hpc/linux/linux.html",
       "dependencies": []
     },
     "linux-and-hpc/linux/Linux Permissions.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 21,
+      "modifiedTime": 1735689112811,
+      "sourceSize": 3966,
       "exportedPath": "linux-and-hpc/linux/linux-permissions.html",
       "dependencies": []
     },
     "linux-and-hpc/tools/Rclone.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 0,
+      "modifiedTime": 1735689112811,
+      "sourceSize": 4173,
       "exportedPath": "linux-and-hpc/tools/rclone.html",
       "dependencies": []
     },
     "linux-and-hpc/Linux and HPC.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 1474,
+      "modifiedTime": 1735689112811,
+      "sourceSize": 873,
       "exportedPath": "linux-and-hpc/linux-and-hpc.html",
       "dependencies": []
     },
     "molecular-cell-bio/Molecular Cell Biology.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 0,
+      "modifiedTime": 1735670256022,
+      "sourceSize": 6,
       "exportedPath": "molecular-cell-bio/molecular-cell-biology.html",
       "dependencies": []
     },
     "programming/Programming.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 0,
+      "modifiedTime": 1735670256022,
+      "sourceSize": 6,
       "exportedPath": "programming/programming.html",
       "dependencies": []
     },
     "seq/Sequencing.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 0,
+      "modifiedTime": 1735670256022,
+      "sourceSize": 6,
       "exportedPath": "seq/sequencing.html",
       "dependencies": []
     },
     "stat/Statistics.md": {
-      "modifiedTime": 1735613642744,
-      "sourceSize": 0,
+      "modifiedTime": 1735670256022,
+      "sourceSize": 6,
       "exportedPath": "stat/statistics.html",
+      "dependencies": []
+    },
+    "lib/media/favicon.svg": {
+      "modifiedTime": 1735624165611,
+      "sourceSize": 8337,
+      "exportedPath": "lib/media/favicon.svg",
+      "dependencies": []
+    },
+    "genetics-genomics/Genetics and Genomics.md": {
+      "modifiedTime": 1735665216794,
+      "sourceSize": 0,
+      "exportedPath": "genetics-genomics/genetics-and-genomics.html",
+      "dependencies": []
+    },
+    "ml/Machine Learning.md": {
+      "modifiedTime": 1735670256022,
+      "sourceSize": 6,
+      "exportedPath": "ml/machine-learning.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/tools/Environment Modules.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 4200,
+      "exportedPath": "linux-and-hpc/tools/environment-modules.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/tools/Lmod.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 3204,
+      "exportedPath": "linux-and-hpc/tools/lmod.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/tools/Micromamba.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 2981,
+      "exportedPath": "linux-and-hpc/tools/micromamba.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/tools/Miniconda.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 2884,
+      "exportedPath": "linux-and-hpc/tools/miniconda.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/ubuntu/apt.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1440,
+      "exportedPath": "linux-and-hpc/linux/ubuntu/apt.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/ubuntu/R Packages Installation Troubleshooting.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 6672,
+      "exportedPath": "linux-and-hpc/linux/ubuntu/r-packages-installation-troubleshooting.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/ubuntu/Remove snap from Ubuntu.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1724,
+      "exportedPath": "linux-and-hpc/linux/ubuntu/remove-snap-from-ubuntu.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/ubuntu/Ubuntu.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 408,
+      "exportedPath": "linux-and-hpc/linux/ubuntu/ubuntu.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/Bash Script.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 8416,
+      "exportedPath": "linux-and-hpc/linux/bash-script.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/bashrc vs bash_profile.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1691,
+      "exportedPath": "linux-and-hpc/linux/bashrc-vs-bash_profile.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/Environment Variables.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1537,
+      "exportedPath": "linux-and-hpc/linux/environment-variables.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/Run Jobs in Background.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 3179,
+      "exportedPath": "linux-and-hpc/linux/run-jobs-in-background.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/stdin stdout stderr.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1782,
+      "exportedPath": "linux-and-hpc/linux/stdin-stdout-stderr.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/Symbolic Link.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 3059,
+      "exportedPath": "linux-and-hpc/linux/symbolic-link.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/linux/TTY.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1652,
+      "exportedPath": "linux-and-hpc/linux/tty.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/tools/Gzip.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1453,
+      "exportedPath": "linux-and-hpc/tools/gzip.html",
+      "dependencies": []
+    },
+    "linux-and-hpc/tools/Tmux.md": {
+      "modifiedTime": 1735689112811,
+      "sourceSize": 1867,
+      "exportedPath": "linux-and-hpc/tools/tmux.html",
       "dependencies": []
     }
   }

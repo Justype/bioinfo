@@ -1,0 +1,462 @@
+<!DOCTYPE html> <html><head>
+		<title>Bash Script</title>
+		<base href="..\../">
+		<meta id="root-path" root-path="..\../">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimum-scale=1.0, maximum-scale=5.0">
+		<meta charset="UTF-8">
+		<meta name="description" content="Bioinfo - Bash Script">
+		<meta property="og:title" content="Bash Script">
+		<meta property="og:description" content="Bioinfo - Bash Script">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="linux-and-hpc/linux/bash-script.html">
+		<meta property="og:image" content="undefined">
+		<meta property="og:site_name" content="Bioinfo">
+		<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="lib/rss.xml"><script async="" id="webpage-script" src="lib/scripts/webpage.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script type="module" async="" id="graph-view-script" src="lib/scripts/graph-view.js"></script><script async="" id="graph-wasm-script" src="lib/scripts/graph-wasm.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="graph-render-worker-script" src="lib/scripts/graph-render-worker.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="tinycolor-script" src="lib/scripts/tinycolor.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="pixi-script" src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.4.0/pixi.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><script async="" id="minisearch-script" src="https://cdn.jsdelivr.net/npm/minisearch@6.3.0/dist/umd/index.min.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><link rel="icon" href="lib/media/favicon.png"><script async="" id="graph-data-script" src="lib/scripts/graph-data.js" onload="this.onload=null;this.setAttribute(&quot;loaded&quot;, &quot;true&quot;)"></script><style>body{--line-width:40em;--line-width-adaptive:40em;--file-line-width:40em;--sidebar-width:min(20em, 80vw);--collapse-arrow-size:11px;--tree-horizontal-spacing:0.6em;--tree-vertical-spacing:0.6em;--sidebar-margin:12px}.sidebar{height:100%;min-width:calc(var(--sidebar-width) + var(--divider-width-hover));max-width:calc(var(--sidebar-width) + var(--divider-width-hover));font-size:14px;z-index:10;position:relative;overflow:hidden;transition:min-width ease-in-out,max-width ease-in-out;transition-duration:.2s;contain:size}.sidebar-left{left:0}.sidebar-right{right:0}.sidebar.is-collapsed{min-width:0;max-width:0}body.floating-sidebars .sidebar{position:absolute}.sidebar-content{height:100%;min-width:calc(var(--sidebar-width) - var(--divider-width-hover));top:0;padding:var(--sidebar-margin);padding-top:4em;line-height:var(--line-height-tight);background-color:var(--background-secondary);transition:background-color,border-right,border-left,box-shadow;transition-duration:var(--color-fade-speed);transition-timing-function:ease-in-out;position:absolute;display:flex;flex-direction:column}.sidebar:not(.is-collapsed) .sidebar-content{min-width:calc(max(100%,var(--sidebar-width)) - 3px);max-width:calc(max(100%,var(--sidebar-width)) - 3px)}.sidebar-left .sidebar-content{left:0;border-top-right-radius:var(--radius-l);border-bottom-right-radius:var(--radius-l)}.sidebar-right .sidebar-content{right:0;border-top-left-radius:var(--radius-l);border-bottom-left-radius:var(--radius-l)}.sidebar:has(.sidebar-content:empty):has(.topbar-content:empty){display:none}.sidebar-topbar{height:2em;width:var(--sidebar-width);top:var(--sidebar-margin);padding-inline:var(--sidebar-margin);z-index:1;position:fixed;display:flex;align-items:center;transition:width ease-in-out;transition-duration:inherit}.sidebar.is-collapsed .sidebar-topbar{width:calc(2.3em + var(--sidebar-margin) * 2)}.sidebar .sidebar-topbar.is-collapsed{width:0}.sidebar-left .sidebar-topbar{left:0}.sidebar-right .sidebar-topbar{right:0}.topbar-content{overflow:hidden;overflow:clip;width:100%;height:100%;display:flex;align-items:center;transition:inherit}.sidebar.is-collapsed .topbar-content{width:0;transition:inherit}.clickable-icon.sidebar-collapse-icon{background-color:transparent;color:var(--icon-color-focused);padding:0!important;margin:0!important;height:100%!important;width:2.3em!important;margin-inline:0.14em!important;position:absolute}.sidebar-left .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);right:var(--sidebar-margin)}.sidebar-right .clickable-icon.sidebar-collapse-icon{transform:rotateY(180deg);left:var(--sidebar-margin)}.clickable-icon.sidebar-collapse-icon svg.svg-icon{width:100%;height:100%}.sidebar-section-header{margin:0 0 1em 0;text-transform:uppercase;letter-spacing:.06em;font-weight:600}body{transition:background-color var(--color-fade-speed) ease-in-out}.webpage-container{display:flex;flex-direction:row;height:100%;width:100%;align-items:stretch;justify-content:center}.document-container{opacity:1;flex-basis:100%;max-width:100%;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;transition:opacity .2s ease-in-out;contain:inline-size}.hide{opacity:0;transition:opacity .2s ease-in-out}.document-container>.markdown-preview-view{margin:var(--sidebar-margin);margin-bottom:0;width:100%;width:-webkit-fill-available;width:-moz-available;width:fill-available;background-color:var(--background-primary);transition:background-color var(--color-fade-speed) ease-in-out;border-top-right-radius:var(--window-radius,var(--radius-m));border-top-left-radius:var(--window-radius,var(--radius-m));overflow-x:hidden!important;overflow-y:auto!important;display:flex!important;flex-direction:column!important;align-items:center!important;contain:inline-size}.document-container>.markdown-preview-view>.markdown-preview-sizer{padding-bottom:80vh!important;width:100%!important;max-width:var(--line-width)!important;flex-basis:var(--line-width)!important;transition:background-color var(--color-fade-speed) ease-in-out;contain:inline-size}.markdown-rendered img:not([width]),.view-content img:not([width]){max-width:100%;outline:0}.document-container>.view-content.embed{display:flex;padding:1em;height:100%;width:100%;align-items:center;justify-content:center}.document-container>.view-content.embed>*{max-width:100%;max-height:100%;object-fit:contain}:has(> :is(.math,table)){overflow-x:auto!important}.document-container>.view-content{overflow-x:auto;contain:content;padding:0;margin:0;height:100%}.scroll-highlight{position:absolute;width:100%;height:100%;pointer-events:none;z-index:1000;background-color:hsla(var(--color-accent-hsl),.25);opacity:0;padding:1em;inset:50%;translate:-50% -50%;border-radius:var(--radius-s)}</style><script defer="">async function loadIncludes(){if("file:"!=location.protocol){let e=document.querySelectorAll("include");for(let t=0;t<e.length;t++){let o=e[t],l=o.getAttribute("src");try{const e=await fetch(l);if(!e.ok){console.log("Could not include file: "+l),o?.remove();continue}let t=await e.text(),n=document.createRange().createContextualFragment(t),i=Array.from(n.children);for(let e of i)e.classList.add("hide"),e.style.transition="opacity 0.5s ease-in-out",setTimeout((()=>{e.classList.remove("hide")}),10);o.before(n),o.remove(),console.log("Included file: "+l)}catch(e){o?.remove(),console.log("Could not include file: "+l,e);continue}}}else{if(document.querySelectorAll("include").length>0){var e=document.createElement("div");e.id="error",e.textContent="Web server exports must be hosted on an http / web server to be viewed correctly.",e.style.position="fixed",e.style.top="50%",e.style.left="50%",e.style.transform="translate(-50%, -50%)",e.style.fontSize="1.5em",e.style.fontWeight="bold",e.style.textAlign="center",document.body.appendChild(e),document.querySelector(".document-container")?.classList.remove("hide")}}}document.addEventListener("DOMContentLoaded",(()=>{loadIncludes()}));let isFileProtocol="file:"==location.protocol;function waitLoadScripts(e,t){let o=e.map((e=>document.getElementById(e+"-script"))),l=0;!function e(){let n=o[l];l++,n&&"true"!=n.getAttribute("loaded")||l<o.length&&e(),l<o.length?n.addEventListener("load",e):t()}()}</script><link rel="stylesheet" href="lib/styles/obsidian.css"><link rel="stylesheet" href="lib/styles/theme.css"><link rel="preload" href="lib/styles/global-variable-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/global-variable-styles.css"></noscript><link rel="preload" href="lib/styles/supported-plugins.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/supported-plugins.css"></noscript><link rel="preload" href="lib/styles/main-styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="lib/styles/main-styles.css"></noscript></head><body class="publish css-settings-manager show-inline-title show-ribbon theme-light"><script defer="">let theme=localStorage.getItem("theme")||(window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light");"dark"==theme?(document.body.classList.add("theme-dark"),document.body.classList.remove("theme-light")):(document.body.classList.add("theme-light"),document.body.classList.remove("theme-dark")),window.innerWidth<480?document.body.classList.add("is-phone"):window.innerWidth<768?document.body.classList.add("is-tablet"):window.innerWidth<1024?document.body.classList.add("is-small-screen"):document.body.classList.add("is-large-screen")</script><div class="webpage-container workspace"><div class="sidebar-left sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"><label class="theme-toggle-container" for="theme_toggle"><input class="theme-toggle-input" type="checkbox" id="theme_toggle"><div class="toggle-background"></div></label></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="search-input-container"><input enterkeyhint="search" type="search" spellcheck="false" placeholder="Search..."><div class="search-input-clear-button" aria-label="Clear search"></div></div><include src="lib/html/file-tree.html"></include></div><script defer="">let ls = document.querySelector(".sidebar-left"); ls.classList.add("is-collapsed"); if (window.innerWidth > 768) ls.classList.remove("is-collapsed"); ls.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-left-width"));</script></div><div class="document-container markdown-reading-view hide"><div class="markdown-preview-view markdown-rendered allow-fold-headings allow-fold-lists is-readable-line-width"><style id="MJX-CHTML-styles"></style><div class="markdown-preview-sizer markdown-preview-section"><h1 class="page-title heading inline-title" id="Bash Script">Bash Script</h1><div class="el-p"><p dir="auto"><a href="?query=tag:linux" class="tag" target="_blank" rel="noopener nofollow">#linux</a> <a href="?query=tag:unix" class="tag" target="_blank" rel="noopener nofollow">#unix</a> <a href="?query=tag:bash" class="tag" target="_blank" rel="noopener nofollow">#bash</a></p></div><div class="el-p"><p dir="auto"><strong>Bash script</strong> is a text file containing a series of commands written for the <strong>Bash shell</strong>.</p></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><strong>Shebang (<code>#!/bin/bash</code>)</strong>: The first line specifying using bash to run this.</li>
+<li data-line="1" dir="auto"><strong>Make executable</strong>: Run <code>chmod +x myscript.sh</code> to make it executable</li>
+<li data-line="2" dir="auto"><strong>Execute</strong>: Run with <code>./myscript.sh</code> or <code>bash myscript.sh</code></li>
+<li data-line="3" dir="auto"><div class="list-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><a data-href="bashrc vs bash_profile" href="linux-and-hpc/linux/bashrc-vs-bash_profile.html" class="internal-link" target="_self" rel="noopener nofollow">bashrc vs bash_profile</a>
+<ul>
+<li data-line="4" dir="auto"><code>bashrc</code> for all bash script</li>
+<li data-line="5" dir="auto"><code>bash_profile</code> for login shell only</li>
+</ul>
+</li>
+</ul></div><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token function">ls</span> <span class="token comment"># do something</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-h1 heading-wrapper"><h1 data-heading="Bash Variables" dir="auto" class="heading" id="Bash_Variables">Bash Variables</h1><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto">creating: <code>variable_name="value"</code> (no space)</li>
+<li data-line="1" dir="auto">accessing: <code>$variable_name</code></li>
+<li data-line="2" dir="auto">printing: <code>echo $variable_name</code></li>
+<li data-line="3" dir="auto">arithmetic: <code>$(( num1 + num2 ))</code> (+-*/)</li>
+<li data-line="4" dir="auto">string concatenation: <code>result="$string1 $string2"</code></li>
+</ul></div><div class="el-h3 heading-wrapper"><h3 data-heading="Special Variables" dir="auto" class="heading" id="Special_Variables"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Special Variables</h3><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Variable</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto"><code>$0</code></td>
+<td dir="ltr">Name of the script being executed.</td>
+<td dir="ltr"><code>echo "This script is called $0"</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>$1</code>, <code>$2</code>, ... <code>$N</code></td>
+<td dir="ltr">Positional arguments passed to the script.</td>
+<td dir="ltr"><code>echo "First argument: $1"</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>$#</code></td>
+<td dir="ltr">The number of positional parameters passed to the script.</td>
+<td dir="ltr"><code>echo "Number of arguments: $#"</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>$@</code></td>
+<td dir="ltr">All positional parameters, quoted as <strong>separate words</strong>.</td>
+<td dir="ltr"><code>echo "Arguments: $@"</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>$*</code></td>
+<td dir="ltr">All positional parameters, quoted as a <strong>single word</strong>.</td>
+<td dir="ltr"><code>echo "Arguments: $*"</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>$?</code></td>
+<td dir="ltr">Exit status of the last command executed. A value of <code>0</code> indicates success, non-zero indicates failure.</td>
+<td dir="ltr"><code>echo "Exit status: $?"</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>$$</code></td>
+<td dir="ltr">Process ID (PID) of the currently running script or shell.</td>
+<td dir="ltr"><code>echo "Script's PID: $$"</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>$!</code></td>
+<td dir="ltr">Process ID (PID) of the last background command.</td>
+<td dir="ltr"><code>sleep 10 &amp; echo "PID of last background process: $!"</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>$-</code></td>
+<td dir="ltr">Current shell options (e.g., <code>-x</code>, <code>-e</code> for debugging or error handling).</td>
+<td dir="ltr"><code>echo "Shell options: $-"</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="Other Tips:" dir="auto" class="heading" id="Other_Tips:"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Other Tips:</h3><div class="heading-children"><div class="el-ul"><ul>
+<li data-line="0" dir="auto"><code>${variable:-default_value}</code> If <code>variable</code> is unset or empty, <code>default_value</code> is used.</li>
+<li data-line="1" dir="auto">get filename or extension</li>
+</ul></div><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token assign-left variable">FILE</span><span class="token operator">=</span>example.tar.gz
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">${FILE<span class="token operator">%%</span>.*}</span>"</span> <span class="token comment"># example</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">${FILE<span class="token operator">%</span>.*}</span>"</span>  <span class="token comment"># example.tar</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">${FILE<span class="token operator">#</span>*.}</span>"</span>  <span class="token comment"># tar.gz</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"<span class="token variable">${FILE<span class="token operator">##</span>*.}</span>"</span> <span class="token comment"># gz</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-ul"><ul>
+<li data-line="0" dir="auto">get script location</li>
+</ul></div><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token assign-left variable">script_dir</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span><span class="token function">dirname</span> <span class="token string">"<span class="token variable">${<span class="token environment constant">BASH_SOURCE</span><span class="token punctuation">[</span>0<span class="token punctuation">]</span>}</span>"</span><span class="token variable">)</span></span>"</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Bash Control Flow" dir="auto" class="heading" id="Bash_Control_Flow">Bash Control Flow</h1><div class="heading-children"><div class="el-h2 heading-wrapper"><h2 data-heading="`if` `elif` `else`" dir="auto" class="heading" id="`if`_`elif`_`else`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>if</code> <code>elif</code> <code>else</code></h2><div class="heading-children"><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token keyword">if</span> <span class="token punctuation">[</span> condition1 <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment"># Commands if condition1 is true</span>
+<span class="token keyword">elif</span> <span class="token punctuation">[</span> condition2 <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token comment"># Commands if condition2 is true</span>
+<span class="token keyword">else</span>
+    <span class="token comment"># Commands if neither condition1 nor condition2 are true</span>
+<span class="token keyword">fi</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="`case` switch-case" dir="auto" class="heading" id="`case`_switch-case"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>case</code> switch-case</h2><div class="heading-children"><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token keyword">case</span> <span class="token variable">$variable</span> <span class="token keyword">in</span>
+    pattern1 <span class="token operator">|</span> pattern2<span class="token punctuation">)</span>
+        <span class="token comment"># Commands if pattern1 or pattern2 match</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    pattern3<span class="token punctuation">)</span>
+        <span class="token comment"># Commands if pattern3 matches</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+    *<span class="token punctuation">)</span>
+        <span class="token comment"># Commands if no pattern matches</span>
+        <span class="token punctuation">;</span><span class="token punctuation">;</span>
+<span class="token keyword">esac</span>
+
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="`for` loop" dir="auto" class="heading" id="`for`_loop"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>for</code> loop</h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>for</code> loop is used to iterate over a series of values, such as a list or a range of numbers.</p></div><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token keyword">for</span> <span class="token for-or-select variable">variable</span> <span class="token keyword">in</span> <span class="token string">"value1 value2 value3"</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token comment"># Commands to be executed</span>
+<span class="token keyword">done</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">arg</span> <span class="token keyword">in</span> <span class="token variable">$@</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+	<span class="token builtin class-name">echo</span> Arguments <span class="token variable">$arg</span>
+<span class="token keyword">done</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">..</span><span class="token number">5</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"Number: <span class="token variable">$i</span>"</span>
+<span class="token keyword">done</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="**`for` Loop with C-style Syntax**" dir="auto" class="heading" id="**`for`_Loop_with_C-style_Syntax**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong><code>for</code> Loop with C-style Syntax</strong></h2><div class="heading-children"><div class="el-p"><p dir="auto">You can also use a <code>for</code> loop with a C-style syntax, where you explicitly define the initialization, condition, and increment/decrement.</p></div><div class="el-p"><p dir="auto">Syntax:</p></div><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span> initialization<span class="token punctuation">;</span> condition<span class="token punctuation">;</span> increment <span class="token punctuation">))</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token comment"># Commands to be executed</span>
+<span class="token keyword">done</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token keyword">for</span> <span class="token variable"><span class="token punctuation">((</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;=</span><span class="token number">5</span><span class="token punctuation">;</span> i<span class="token operator">++</span> <span class="token punctuation">))</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"Number: <span class="token variable">$i</span>"</span>
+<span class="token keyword">done</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="**`while` Loop**" dir="auto" class="heading" id="**`while`_Loop**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong><code>while</code> Loop</strong></h2><div class="heading-children"><div class="el-p"><p dir="auto">The <code>while</code> loop executes as long as a condition is true. It checks the condition before executing the commands inside the loop.</p></div><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token keyword">while</span> <span class="token punctuation">[</span> condition <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token comment"># Commands to be executed</span>
+<span class="token keyword">done</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="`break` and `continue`" dir="auto" class="heading" id="`break`_and_`continue`"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><code>break</code> and <code>continue</code></h2><div class="heading-children"><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token punctuation">{</span><span class="token number">1</span><span class="token punctuation">..</span><span class="token number">10</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
+    <span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token variable">$i</span> -eq <span class="token number">5</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">echo</span> <span class="token string">"Breaking the loop at i=<span class="token variable">$i</span>"</span>
+        <span class="token builtin class-name">break</span>
+    <span class="token keyword">elif</span> <span class="token punctuation">[</span> <span class="token variable">$i</span> -eq <span class="token number">3</span> <span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+        <span class="token builtin class-name">continue</span>  <span class="token comment"># Skip iteration 3</span>
+    <span class="token keyword">fi</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"i=<span class="token variable">$i</span>"</span>
+<span class="token keyword">done</span>
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div><div class="el-h2 heading-wrapper"><h2 data-heading="Bash Logical Conditions" dir="auto" class="heading" id="Bash_Logical_Conditions"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>Bash Logical Conditions</h2><div class="heading-children"><div class="el-p"><p dir="auto">In <strong>Bash</strong>, you can use various <strong>conditions</strong> to compare values, check for patterns, and make decisions based on logical conditions.</p></div><div class="el-p"><p dir="auto"><strong>Always use double quote if you are using bash.</strong></p></div><div class="el-h3 heading-wrapper"><h3 data-heading="**Comparisons**" dir="auto" class="heading" id="**Comparisons**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Comparisons</strong></h3><div class="heading-children"><div class="el-p"><p dir="auto">For comparing <strong>numbers</strong>, you typically use the <code>[</code> (or <code>test</code>) command with operators like <code>-gt</code>, <code>-lt</code>, <code>-ge</code>, <code>-le</code>, <code>-eq</code>, and <code>-ne</code>.</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Operator</strong></th>
+<th dir="ltr"><strong>Meaning</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>-eq</code></td>
+<td dir="ltr">Equal to</td>
+<td dir="ltr"><code>if [ $a -eq $b ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-ne</code></td>
+<td dir="ltr">Not equal to</td>
+<td dir="ltr"><code>if [ $a -ne $b ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-gt</code></td>
+<td dir="ltr">Greater than</td>
+<td dir="ltr"><code>if [ $a -gt $b ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-lt</code></td>
+<td dir="ltr">Less than</td>
+<td dir="ltr"><code>if [ $a -lt $b ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-ge</code></td>
+<td dir="ltr">Greater than or equal to</td>
+<td dir="ltr"><code>if [ $a -ge $b ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-le</code></td>
+<td dir="ltr">Less than or equal to</td>
+<td dir="ltr"><code>if [ $a -le $b ]; then ...</code></td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">But in bash you can also use <strong>double square</strong> <code>[[ ]]</code> for extended test command.</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Operator</strong></th>
+<th dir="ltr"><strong>Meaning</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto"><code>=</code></td>
+<td dir="ltr">Equal to</td>
+<td dir="ltr"><code>if [[ "$a" = "$b" ]]; then ...</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>!=</code></td>
+<td dir="ltr">Not equal to</td>
+<td dir="ltr"><code>if [[ "$a" != "$b" ]]; then ...</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>&gt;</code></td>
+<td dir="ltr">Greater than</td>
+<td dir="ltr"><code>if [[ "$a" &gt; "$b" ]]; then ...</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>&lt;</code></td>
+<td dir="ltr">Less than</td>
+<td dir="ltr"><code>if [[ "$a" &lt; "$b" ]]; then ...</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>&gt;=</code></td>
+<td dir="ltr">Greater than or equal to</td>
+<td dir="ltr"><code>if [[ "$a" &gt;= "$b" ]]; then ...</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>&lt;=</code></td>
+<td dir="ltr">Less than or equal to</td>
+<td dir="ltr"><code>if [[ "$a" &lt;= "$b" ]]; then ...</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="**String Comparisons**" dir="auto" class="heading" id="**String_Comparisons**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>String Comparisons</strong></h3><div class="heading-children"><div class="el-p"><p dir="auto">For comparing <strong>strings</strong>, you use different operators such as <code>=</code>, <code>!=</code>, <code>-z</code>, and <code>-n</code>.</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Operator</strong></th>
+<th dir="ltr"><strong>Meaning</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto"><code>=</code></td>
+<td dir="ltr">Equal to (string)</td>
+<td dir="ltr"><code>if [ "$a" = "$b" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>!=</code></td>
+<td dir="ltr">Not equal to (string)</td>
+<td dir="ltr"><code>if [ "$a" != "$b" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-z</code></td>
+<td dir="ltr">String is empty (zero length)</td>
+<td dir="ltr"><code>if [ -z "$a" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-n</code></td>
+<td dir="ltr">String is not empty (non-zero length)</td>
+<td dir="ltr"><code>if [ -n "$a" ]; then ...</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="**Pattern Matching (Regular Expressions)**" dir="auto" class="heading" id="**Pattern_Matching_(Regular_Expressions)**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Pattern Matching (Regular Expressions)</strong></h3><div class="heading-children"><div class="el-p"><p dir="auto">To match strings against <strong>regular expressions</strong>, use the <code>[[ ... ]]</code> test with the <code>=~</code> operator.</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Operator</strong></th>
+<th dir="ltr"><strong>Meaning</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto"><code>=~</code></td>
+<td dir="ltr">Regular expression match</td>
+<td dir="ltr"><code>if [[ "$string" =~ regex ]]; then ...</code></td>
+</tr>
+</tbody>
+</table></div><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token assign-left variable">string</span><span class="token operator">=</span><span class="token string">"hello123"</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token string">"<span class="token variable">$string</span>"</span> <span class="token operator">=~</span> ^hello<span class="token punctuation">[</span><span class="token number">0</span>-9<span class="token punctuation">]</span>+$ <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"String matches the regex"</span>
+<span class="token keyword">else</span>
+    <span class="token builtin class-name">echo</span> <span class="token string">"String does not match the regex"</span>
+<span class="token keyword">fi</span>
+
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="**Logical Operators**" dir="auto" class="heading" id="**Logical_Operators**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><strong>Logical Operators</strong></h3><div class="heading-children"><div class="el-p"><p dir="auto">To combine multiple conditions, use logical operators like <code>-a</code> (AND), <code>-o</code> (OR), and <code>!</code> (NOT).</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Operator</strong></th>
+<th dir="ltr"><strong>Meaning</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>-a</code></td>
+<td dir="ltr">AND (both conditions must be true)</td>
+<td dir="ltr"><code>if [ $a -gt 5 -a $b -lt 10 ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-o</code></td>
+<td dir="ltr">OR (one condition must be true)</td>
+<td dir="ltr"><code>if [ $a -gt 5 -o $b -lt 10 ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>!</code></td>
+<td dir="ltr">NOT (negates the condition)</td>
+<td dir="ltr"><code>if [ ! -z "$a" ]; then ...</code></td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">But in bash you can also use <strong>double square</strong> <code>[[ ]]</code> for extended test command.</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Operator</strong></th>
+<th dir="ltr"><strong>Meaning</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto"><code>&amp;&amp;</code></td>
+<td dir="ltr">AND (both conditions must be true)</td>
+<td dir="ltr"><code>if [[ $a &gt; 5 &amp;&amp; $b &lt; 10 ]]; then ...</code></td>
+</tr>
+<tr>
+<td dir="auto">`</td>
+<td dir="auto"></td>
+<td dir="auto">`</td>
+</tr>
+<tr>
+<td dir="auto"><code>!</code></td>
+<td dir="ltr">NOT (negates the condition)</td>
+<td dir="ltr"><code>if [[ ! -z "$a" ]]; then ...</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="5. **File Tests**" dir="auto" class="heading" id="5._**File_Tests**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>5. <strong>File Tests</strong></h3><div class="heading-children"><div class="el-p"><p dir="auto">Bash also supports file-related conditions. These can check if files exist, are readable, writable, or executable.</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Operator</strong></th>
+<th dir="ltr"><strong>Meaning</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><code>-e</code></td>
+<td dir="ltr">File exists</td>
+<td dir="ltr"><code>if [ -e "$file" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-f</code></td>
+<td dir="ltr">File is a regular file</td>
+<td dir="ltr"><code>if [ -f "$file" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-d</code></td>
+<td dir="ltr">File is a directory</td>
+<td dir="ltr"><code>if [ -d "$dir" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-r</code></td>
+<td dir="ltr">File is readable</td>
+<td dir="ltr"><code>if [ -r "$file" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-w</code></td>
+<td dir="ltr">File is writable</td>
+<td dir="ltr"><code>if [ -w "$file" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-x</code></td>
+<td dir="ltr">File is executable</td>
+<td dir="ltr"><code>if [ -x "$file" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-s</code></td>
+<td dir="ltr">File has a non-zero size</td>
+<td dir="ltr"><code>if [ -s "$file" ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="ltr"><code>-L</code></td>
+<td dir="ltr">File is a symbolic link</td>
+<td dir="ltr"><code>if [ -L "$file" ]; then ...</code></td>
+</tr>
+</tbody>
+</table></div></div></div><div class="el-h3 heading-wrapper"><h3 data-heading="6. **Combining Multiple Conditions**" dir="auto" class="heading" id="6._**Combining_Multiple_Conditions**"><div class="heading-collapse-indicator collapse-indicator collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div>6. <strong>Combining Multiple Conditions</strong></h3><div class="heading-children"><div class="el-p"><p dir="auto">You can combine conditions using <code>&amp;&amp;</code> (AND) and <code>||</code> (OR) in an <code>if</code> statement.</p></div><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Operator</strong></th>
+<th dir="ltr"><strong>Meaning</strong></th>
+<th dir="ltr"><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="auto"><code>&amp;&amp;</code></td>
+<td dir="ltr">AND (both true)</td>
+<td dir="ltr"><code>if [ condition1 ] &amp;&amp; [ condition2 ]; then ...</code></td>
+</tr>
+<tr>
+<td dir="auto"><code>\|</code></td>
+<td dir="auto"></td>
+<td dir="auto">`</td>
+</tr>
+</tbody>
+</table></div></div></div></div></div></div></div><div class="el-h1 heading-wrapper"><h1 data-heading="Bash Function" dir="auto" class="heading" id="Bash_Function">Bash Function</h1><div class="heading-children"><div class="el-table" dir="ltr" style="overflow-x: auto;"><table>
+<thead>
+<tr>
+<th dir="ltr"><strong>Feature</strong></th>
+<th dir="ltr"><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td dir="ltr"><strong>Definition</strong></td>
+<td dir="ltr"><code>function_name() { commands; }</code> or <code>function function_name { commands; }</code></td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Calling</strong></td>
+<td dir="ltr"><code>function_name</code> or <code>function_name arg1 arg2</code></td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Arguments</strong></td>
+<td dir="ltr"><code>$1</code>, <code>$2</code>, etc., to access passed arguments</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Returning data</strong></td>
+<td dir="ltr">Use <code>echo</code> or <code>printf</code> to return data (not <code>return</code>)</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Exit status</strong></td>
+<td dir="ltr">Use <code>return</code> for exit status (0 for success, non-zero for error)</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Local variables</strong></td>
+<td dir="ltr">Use <code>local</code> to declare local variables within the function</td>
+</tr>
+<tr>
+<td dir="ltr"><strong>Parameters</strong></td>
+<td dir="ltr">Use <code>$@</code> or <code>$1</code>, <code>$2</code>, etc., to handle multiple parameters</td>
+</tr>
+</tbody>
+</table></div><div class="el-p"><p dir="auto">Example</p></div><div class="el-pre"><pre class="language-bash" tabindex="0"><code data-line="0" class="language-bash is-loaded"><span class="token shebang important">#!/bin/bash</span>
+
+<span class="token comment"># Function definition</span>
+<span class="token function-name function">calculate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token builtin class-name">local</span> <span class="token assign-left variable">result</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$((</span> $<span class="token number">1</span> <span class="token operator">*</span> $<span class="token number">2</span> <span class="token variable">))</span></span>  <span class="token comment"># Local variable</span>
+    <span class="token builtin class-name">echo</span> <span class="token variable">$result</span>  <span class="token comment"># Return value via echo</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment"># Function call with arguments</span>
+<span class="token assign-left variable">result</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span>calculate <span class="token number">5</span> <span class="token number">10</span><span class="token variable">)</span></span>  <span class="token comment"># Capture return value</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"Result is: <span class="token variable">$result</span>"</span>
+
+</code><button class="copy-code-button"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon lucide-copy"><rect x="8" y="8" width="14" height="14" rx="2" ry="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg></button></pre></div><div class="mod-footer mod-ui"></div></div></div></div></div></div><div class="sidebar-right sidebar"><div class="sidebar-handle"></div><div class="sidebar-topbar"><div class="topbar-content"></div><div class="clickable-icon sidebar-collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><path d="M21 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H21C22.1046 21 23 20.1046 23 19V5C23 3.89543 22.1046 3 21 3Z"></path><path d="M10 4V20"></path><path d="M4 7H7"></path><path d="M4 10H7"></path><path d="M4 13H7"></path></svg></div></div><div class="sidebar-content"><div class="graph-view-wrapper"><div class="sidebar-section-header">Interactive Graph</div><div class="graph-view-placeholder">
+		<div class="graph-view-container">
+			<div class="graph-icon graph-expand" role="button" aria-label="Expand" data-tooltip-position="top"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></div>
+			<canvas id="graph-canvas" class="hide" width="512px" height="512px"></canvas>
+		</div>
+		</div></div><div class="tree-container mod-root nav-folder tree-item outline-tree" data-depth="0"><div class="tree-header"><span class="sidebar-section-header">Table Of Contents</span><button class="clickable-icon collapse-tree-button is-collapsed" aria-label="Collapse All"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></svg></button></div><div class="tree-scroll-area tree-item-children nav-folder-children"><div class="tree-item mod-tree-folder nav-folder mod-collapsible is-collapsed" style="display: none;"></div><div class="tree-item" data-depth="1"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#Bash Script"><div class="tree-item-contents heading-link" heading-name="Bash Script"><span class="tree-item-title">Bash Script</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#Bash_Variables"><div class="tree-item-contents heading-link" heading-name="Bash Variables"><span class="tree-item-title">Bash Variables</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="3"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#Special_Variables"><div class="tree-item-contents heading-link" heading-name="Special Variables"><span class="tree-item-title">Special Variables</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#Other_Tips:"><div class="tree-item-contents heading-link" heading-name="Other Tips:"><span class="tree-item-title">Other Tips:</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#Bash_Control_Flow"><div class="tree-item-contents heading-link" heading-name="Bash Control Flow"><span class="tree-item-title">Bash Control Flow</span></div></a><div class="tree-item-children nav-folder-children"><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#`if`_`elif`_`else`"><div class="tree-item-contents heading-link" heading-name="`if` `elif` `else`"><span class="tree-item-title"><code>if</code> <code>elif</code> <code>else</code></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#`case`_switch-case"><div class="tree-item-contents heading-link" heading-name="`case` switch-case"><span class="tree-item-title"><code>case</code> switch-case</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#`for`_loop"><div class="tree-item-contents heading-link" heading-name="`for` loop"><span class="tree-item-title"><code>for</code> loop</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#**`for`_Loop_with_C-style_Syntax**"><div class="tree-item-contents heading-link" heading-name="**`for` Loop with C-style Syntax**"><span class="tree-item-title"><strong><code>for</code> Loop with C-style Syntax</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#**`while`_Loop**"><div class="tree-item-contents heading-link" heading-name="**`while` Loop**"><span class="tree-item-title"><strong><code>while</code> Loop</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#`break`_and_`continue`"><div class="tree-item-contents heading-link" heading-name="`break` and `continue`"><span class="tree-item-title"><code>break</code> and <code>continue</code></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item mod-collapsible is-collapsed" data-depth="2"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#Bash_Logical_Conditions"><div class="tree-item-contents heading-link" heading-name="Bash Logical Conditions"><div class="collapse-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="svg-icon right-triangle"><path d="M3 8L12 17L21 8"></path></svg></div><span class="tree-item-title">Bash Logical Conditions</span></div></a><div class="tree-item-children nav-folder-children" style="display: none;"><div class="tree-item" data-depth="3"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#**Comparisons**"><div class="tree-item-contents heading-link" heading-name="**Comparisons**"><span class="tree-item-title"><strong>Comparisons</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#**String_Comparisons**"><div class="tree-item-contents heading-link" heading-name="**String Comparisons**"><span class="tree-item-title"><strong>String Comparisons</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#**Pattern_Matching_(Regular_Expressions)**"><div class="tree-item-contents heading-link" heading-name="**Pattern Matching (Regular Expressions)**"><span class="tree-item-title"><strong>Pattern Matching (Regular Expressions)</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#**Logical_Operators**"><div class="tree-item-contents heading-link" heading-name="**Logical Operators**"><span class="tree-item-title"><strong>Logical Operators</strong></span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#5._**File_Tests**"><div class="tree-item-contents heading-link" heading-name="5. **File Tests**"><span class="tree-item-title">5. 
+File Tests
+</span></div></a><div class="tree-item-children nav-folder-children"></div></div><div class="tree-item" data-depth="3"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#6._**Combining_Multiple_Conditions**"><div class="tree-item-contents heading-link" heading-name="6. **Combining Multiple Conditions**"><span class="tree-item-title">6. 
+Combining Multiple Conditions
+</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div></div><div class="tree-item" data-depth="1"><a class="tree-link" href="linux-and-hpc\linux\bash-script.html#Bash_Function"><div class="tree-item-contents heading-link" heading-name="Bash Function"><span class="tree-item-title">Bash Function</span></div></a><div class="tree-item-children nav-folder-children"></div></div></div></div></div><script defer="">let rs = document.querySelector(".sidebar-right"); rs.classList.add("is-collapsed"); if (window.innerWidth > 768) rs.classList.remove("is-collapsed"); rs.style.setProperty("--sidebar-width", localStorage.getItem("sidebar-right-width"));</script></div></div></body></html>

@@ -25,8 +25,8 @@ sudo snap remove firefox
 # If failed, run this: disable gnome extensions and hunspell service and remove firefox
 sudo rm /etc/apparmor.d/usr.bin.firefox 
 sudo rm /etc/apparmor.d/local/usr.bin.firefox
-sudo systemctl stop var-snap-firefox-common-host\\\\x2dhunspell.mount
-sudo systemctl disable var-snap-firefox-common-host\\\\x2dhunspell.mount
+sudo systemctl stop var-snap-firefox-common-host\\x2dhunspell.mount
+sudo systemctl disable var-snap-firefox-common-host\\x2dhunspell.mount
 sudo snap remove firefox
 ```
 
@@ -53,7 +53,7 @@ sudo apt update
 sudo apt install firefox
 ```
 
-# References
+## References
 
 - [https://askubuntu.com/questions/1035915/how-to-remove-snap-from-ubuntu](https://askubuntu.com/questions/1035915/how-to-remove-snap-from-ubuntu)
 - [https://askubuntu.com/questions/1399383/how-to-install-firefox-as-a-traditional-deb-package-without-snap-in-ubuntu-22/1404401#1404401](https://askubuntu.com/questions/1399383/how-to-install-firefox-as-a-traditional-deb-package-without-snap-in-ubuntu-22/1404401#1404401)

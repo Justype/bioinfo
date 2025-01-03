@@ -13,13 +13,13 @@
 - If your connection to remote machine is closed, `SIGHUP` signal will be sent to the remote machine to terminate running jobs.
 - `nohup` is the middle layer, which catches the `SIGHUP` signal but does not pass it so that the process will not be terminated.
 
-# HUP and SIGHUP
+## HUP and SIGHUP
 
 If something happened that broke the connection between your terminal and the computer, the computer detected the line drop and sent a or hang up signal to the programs you'd been running. The programs ceased execution when they received the signal `HUP`.
 
 Today, a terminal window is an emulation of a physical terminal. If you have processes running that were launched from that terminal window and you close that window the `SIGHUP` signal is sent to the programs so that they're informed of the HUP and know they should terminate.
 
-# Nohup
+## Nohup
 
 If you want to have a process continue even if the terminal window it was launched from is closed, you need a way to intercept the `SIGHUP` so that the program never receives it. (Actually, the terminal window doesn't launch processes, they're launched by the shell session inside the terminal window.) The simple and elegant solution to that problem is to place another process between the shell session and the program, and have that middle-layer program never pass on the `SIGHUP` signal.
 
@@ -62,7 +62,7 @@ user@host:/somewhere/data$ pwdx 847252
 
 You can print TTY in script, then you can find the process by `ps -t`
 
-# References
+## References
 
 - [https://www.howtogeek.com/804823/nohup-command-linux/](https://www.howtogeek.com/804823/nohup-command-linux/)
 - [https://www.baeldung.com/linux/nohup-process-get-pid](https://www.baeldung.com/linux/nohup-process-get-pid)

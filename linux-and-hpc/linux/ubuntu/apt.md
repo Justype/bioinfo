@@ -2,7 +2,7 @@
 
 NOTE: Always `update` before installing/upgrading packages
 
-| **Command**              | **Description**                                |
+| Command                  | Description                                    |
 | ------------------------ | ---------------------------------------------- |
 | `sudo apt update`        | Updates the package database.                  |
 | `sudo apt upgrade`       | Upgrades installed packages.                   |

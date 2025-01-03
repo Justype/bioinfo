@@ -17,9 +17,10 @@ quick guide:
 ## SSH Apps for Transferring Files
 
 - [FileZilla](https://filezilla-project.org/) (Uncheck recommended software when installing it)
+- [WinSCP](https://winscp.net/eng/index.php) (Windows ONLY)
 - [CarotDAV](http://rei.to/carotdav_en.html)
 
-# Basic Usage
+## Basic Usage
 
 1. **Connecting to a Remote Server**:
 
@@ -53,7 +54,7 @@ scp [username]@[hostname]:[remote file] [local destination]
 # folder with -r
 ```
 
-# Key Authentication
+## Key Authentication
 
 SSH key authentication provides a more secure and convenient alternative to password-based login.
 
@@ -87,7 +88,7 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 ```
 
-5. **Login Using the Key**: After setup, SSH will automatically use the key pair for authentication:
+5. **Using the Key**: After setup, SSH will automatically use the key pair for authentication:
 
 ```bash
 ssh [username]@[hostname]
@@ -95,7 +96,11 @@ scp [local file] [username]@[hostname]:[destination]
 rsync -r [local folder] [username]@[hostname]:[destination]
 ```
 
-# Port Forwarding
+## Port Forwarding
+
+> [!faq] Why port forwarding?
+> Sometimes you want to run [[Jupyter]] or [[RStudio Server]] on the Server.
+> The application is on a certain port of the server. You need port forwarding to access this app.
 
 SSH can forward ports for secure communication between local and remote systems.
 
@@ -129,7 +134,7 @@ ssh -R 9090:localhost:3000 log-1 # same username as whoami
 
 This forwards the login node's port `9090` to compute node port `3000`.
 
-# SSH Config
+## SSH Config
 
 - **Configuration File**: You can simplify SSH commands by using a configuration file (`~/.ssh/config`):
 

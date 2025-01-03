@@ -5,7 +5,7 @@
 ![Teletype teleprinters in use in England during World War II](https://upload.wikimedia.org/wikipedia/commons/8/89/WACsOperateTeletype.jpg)
 Teletype teleprinters in use in England during World War II
 
-# TTY on Linux
+## TTY on Linux
 
 TTY on [[Linux]] is simulated and can be found under `/dev/pts`
 
@@ -39,9 +39,7 @@ xxxx10   pts/856      2024-11-23 22:27 (10.xxx.xxx.237)
 
 ![telegraph alphabet](https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/International_Telegraph_Alphabet_2_brightened.jpg/820px-International_Telegraph_Alphabet_2_brightened.jpg)
 
-# References
-
----
+## References
 
 - [https://www.howtogeek.com/428174/what-is-a-tty-on-linux-and-how-to-use-the-tty-command/](https://www.howtogeek.com/428174/what-is-a-tty-on-linux-and-how-to-use-the-tty-command/)
 - DEC PDP-1: [https://www.youtube.com/watch?v=1EWQYAfuMYw](https://www.youtube.com/watch?v=1EWQYAfuMYw)

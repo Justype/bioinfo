@@ -7,10 +7,11 @@
 | [[SSH]]    | Connect to a remote machine (HPC)                       |
 | [[Slurm]]  | Request computing resources on the cluster              |
 | [[Rclone]] | Transfer files from/to your drive (Google, OneDrive, …) |
-
+| [[Vim]]    | Text editor. (or use `nano`)                            |
 ### Package Manager
 
-You don’t have `sudo` privilege on HPC. Other ways to manage packages and environments:
+> [!tip] Admin Privilege
+> You don’t have `sudo` privilege on HPC. You need other ways to manage packages and environments.
 
 - [[Miniconda]] or [[Micromamba]] with [bioconda](https://bioconda.github.io/)
 - [[Environment Modules]] or [[Lmod]]

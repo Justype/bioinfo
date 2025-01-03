@@ -1,6 +1,6 @@
 #linux #unix #tools #package-manager 
 
-<img alt="mamba logo" height=32 src="https://mamba.readthedocs.io/en/latest/_static/logo.png" /> **Micromamba** is a fully statically-linked, self-contained, executable. This means that the `base` environment is completely empty.
+<img alt="mamba logo" height=32 src="https://mamba.readthedocs.io/en/latest/_static/logo.png" /> **Micromamba** is a fully statically-linked, self-contained executable, compared to [[Miniconda]]. This means that the `base` environment is completely empty.
 
 - [https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html)
 - You can install conda along with micromamba, just install conda in base environment.
@@ -25,7 +25,7 @@ Environments:
 
 Cleaning Cache and Unused packages: `micromamba clean -a`
 
-# Install Micromamba
+## Install Micromamba
 
 ```bash
 "${SHELL}" <(curl -L micro.mamba.pm/install.sh)
@@ -33,7 +33,7 @@ Cleaning Cache and Unused packages: `micromamba clean -a`
 # micromamba shell init --shell bash --root-prefix /where/you/want/to/install
 ```
 
-# Bioconda
+## Bioconda
 
 - [https://bioconda.github.io/](https://bioconda.github.io/)
 
@@ -60,9 +60,9 @@ channel_priority: strict
 auto_activate_base: false
 ```
 
-# Usage
+## Usage
 
-## Create new environment
+### Create new environment
 
 ```bash
 micromamba create -n env_name package=version
@@ -70,7 +70,7 @@ micromamba create -n env_name package=version
 micromamba create -n seq sra-tools bowtie bowtie2 star samtools
 ```
 
-## Activate environment
+### Activate environment
 
 ```bash
 micromamba activate env_name
@@ -79,7 +79,7 @@ micromamba activate seq # then you can run commands in seq env
 fasterq SRRXXXXXXXX
 ```
 
-## Install package in certain environment
+### Install package in certain environment
 
 ```bash
 micromamba install package[=version] [-n env_name] [-c channel]
@@ -92,7 +92,7 @@ micromamba install salmon -n seq   # install salmon in seq env
 micromamba install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
 ```
 
-## Run command in certain environment
+### Run command in certain environment
 
 ```bash
 micromamba run -n env_name command

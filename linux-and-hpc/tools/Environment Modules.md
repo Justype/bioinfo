@@ -8,7 +8,7 @@ Go to check my GitHub repository: [Justype/modules](https://github.com/Justype/m
 
 ![modules logo](https://modules.sourceforge.net/modules_red.svg)
 
-# Quick Examples
+## Quick Examples
 
 - `module avail` (list available modules)
 - `module load software` (load certain modules)
@@ -41,7 +41,7 @@ Usage: cellranger <COMMAND>
 ...
 ```
 
-# Custom Module Files
+## Custom Module Files
 
 Important functions
 
@@ -117,7 +117,7 @@ conflict $app_name
 
 ```
 
-# References
+## References
 
 - Official: [https://modules.readthedocs.io/en/stable/index.html](https://modules.readthedocs.io/en/stable/index.html)
 - Tutorial: [https://adamdjellouli.com/articles/linux_notes/enviroment_modules](https://adamdjellouli.com/articles/linux_notes/enviroment_modules)

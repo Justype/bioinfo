@@ -1,9 +1,8 @@
 [
-  "obsidian-git",
-  "webpage-html-export",
-  "obsidian-kanban",
   "table-editor-obsidian",
   "tag-wrangler",
   "callout-manager",
-  "obsidian-imgur-plugin"
+  "obsidian-imgur-plugin",
+  "obsidian42-brat",
+  "webpage-html-export"
 ]

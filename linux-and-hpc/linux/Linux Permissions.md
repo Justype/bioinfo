@@ -117,7 +117,7 @@ drwxr-xr-x 2 user user  4096 Nov 24 10:01 test_file_user
 drwxr-xr-x 2 user group 4096 Nov 24 10:04 test_file_group
 ```
 
-# References
+## References
 
 - [https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/](https://linuxize.com/post/how-to-list-files-in-linux-using-the-ls-command/)
 - [https://www.redhat.com/en/blog/suid-sgid-sticky-bit](https://www.redhat.com/en/blog/suid-sgid-sticky-bit)

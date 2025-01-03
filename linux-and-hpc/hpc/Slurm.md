@@ -15,7 +15,7 @@ Common Commands:
 - `sbatch` is for **background** jobs. It will **not** be killed if you **close** the terminal.
 - `srun` is for **foreground** jobs. It will be **killed** if terminal is **closed**.
 
-# SBATCH Template
+## SBATCH Template
 
 - Options after double hashtag will not be applied.
 - Delete singularity, micromamba, or module if you don’t use them.
@@ -114,12 +114,11 @@ rename_tmux_window "DONE $job_name Elapsed $RUN_TIME_DAYS-$RUN_TIME_HOURS:$RUN_T
 
 ```
 
-# Build Pipeline with SBATCH Dependency:
-
-`sbatch-pipeline.sh`
+## Build Pipeline with SBATCH Dependency:
 
 ```bash
 #!/bin/bash
+# sbatch-pipeline.sh
 
 ID=$(sbatch --parsable $1) # --parsable to get SLURM_JOB_ID
 shift 
@@ -131,8 +130,9 @@ done
 
 Usage: `sbatch-pipeline.sh script1.slurm script2.slurm script3.slurm`
 
-# References
+## References
 
-- [https://slurm.schedmd.com/overview.html](https://slurm.schedmd.com/overview.html)
-- [https://slurm.schedmd.com/sbatch.html](https://slurm.schedmd.com/sbatch.html)
-- [https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/scheduler/SLURM/SLURM-environment-variables.html](https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/scheduler/SLURM/SLURM-environment-variables.html)
+- https://slurm.schedmd.com/overview.html
+- https://slurm.schedmd.com/sbatch.html
+- https://docs.hpc.shef.ac.uk/en/latest/referenceinfo/scheduler/SLURM/SLURM-environment-variables.html
+- https://hpc.nih.gov/docs/job_dependencies.html

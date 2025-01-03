@@ -12,15 +12,15 @@ lrwxrwxrwx. 1 user group  22 Nov 21 00:00 lab -> /workspace/lab/your_lab
 
 ### Comparison Table
 
-|**Feature**|**Hard Link**|**Symbolic Link**|
-|---|---|---|
-|**Points to**|Inode (index node, actual file)|File/directory path|
-|**Target moves/deletes**|Hard link still valid|Symbolic link breaks|
-|**Cross-filesystem**|Not supported|Supported|
-|**For directories**|Rarely allowed (special cases only)|Fully supported|
-|**Storage use**|Minimal (entry in the filesystem)|Minimal (stores link path)|
-|**File updates**|Visible across all hard links|Only if the path points to the updated target|
-|**Practical use**|Duplicate main files (same content)|Shortcut to files/directories|
+| Feature              | Hard Link                           | Symbolic Link                                 |
+| -------------------- | ----------------------------------- | --------------------------------------------- |
+| Points to            | Inode (index node, actual file)     | File/directory path                           |
+| Target moves/deletes | Hard link still valid               | Symbolic link breaks                          |
+| Cross-filesystem     | Not supported                       | Supported                                     |
+| For directories      | Rarely allowed (special cases only) | Fully supported                               |
+| Storage use          | Minimal (entry in the filesystem)   | Minimal (stores link path)                    |
+| File updates         | Visible across all hard links       | Only if the path points to the updated target |
+| Practical use        | Duplicate main files (same content) | Shortcut to files/directories                 |
 
 ### Hard Link
 

@@ -127,7 +127,7 @@ fusermount -u /path/to/mountpoint
 rclone delete mydrive:/path/to/remote/file
 ```
 
-### 4. **Useful Flags for Rclone**
+### Useful Flags for Rclone
 
 - **`--dry-run`**: Simulate the operation without actually making changes. This is useful to see what will happen before performing the actual action.
 ```bash

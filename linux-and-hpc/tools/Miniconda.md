@@ -1,6 +1,6 @@
 #linux #unix #tools #package-manager
 
-<img alt="anaconda logo" height=32 src="https://docs.anaconda.com/_static/Anaconda_Icon.png" /> Miniconda includes minimum number of packages, including `conda` and `Python`.
+<img alt="anaconda logo" height=32 src="https://docs.anaconda.com/_static/Anaconda_Icon.png" /> [Miniconda](https://docs.anaconda.com/miniconda/install/#quick-command-line-install) includes minimum number of packages, including `conda` and `Python`.
 
 - Because of [bioconda channel](https://bioconda.github.io/), you can easily manage bioinfo packages.
 - Saving disk space using links (hard links in Linux).
@@ -25,7 +25,7 @@ Environments:
 
 Cleaning Cache and Unused packages: `conda clean -a`
 
-# Install Conda
+## Install Conda
 
 ```bash
 wget <https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh>
@@ -40,7 +40,7 @@ bash Miniconda3-latest-Linux-x86_64.sh
 /where_to_install/bin/conda init
 ```
 
-# Bioconda
+## Bioconda
 
 - [https://bioconda.github.io/](https://bioconda.github.io/)
 
@@ -68,9 +68,9 @@ channel_priority: strict
 auto_activate_base: false
 ```
 
-# Usage
+## Usage
 
-## Create new environment
+### Create new environment
 
 ```bash
 conda create -n env_name package=version
@@ -78,7 +78,7 @@ conda create -n env_name package=version
 conda create -n seq sra-tools bowtie bowtie2 star samtools
 ```
 
-## Activate environment
+### Activate environment
 
 ```bash
 conda activate env_name
@@ -87,7 +87,7 @@ conda activate seq  # then you can run commands in seq env
 fasterq SRRXXXXXXXX
 ```
 
-## Install package in certain environment
+### Install package in certain environment
 
 ```bash
 conda install package[=version] [-n env_name] [-c channel]
@@ -100,7 +100,7 @@ conda install salmon -n seq   # install salmon in seq env
 conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
 ```
 
-## Run command in certain environment
+### Run command in certain environment
 
 ```bash
 conda run -n env_name command

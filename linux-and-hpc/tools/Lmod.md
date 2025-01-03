@@ -1,19 +1,19 @@
 #linux #tools #env-manager
 
-<img alt="Lmod logo" height=32 src="https://lmod.readthedocs.io/en/latest/_static/Lmod-4color@2x.png" /> **Lmod** is a lua and enhanced version of [[Environment Modules]].
+<img alt="Lmod logo" height=32 src="https://lmod.readthedocs.io/en/latest/_static/Lmod-4color@2x.png" /> [**Lmod**](https://lmod.readthedocs.io/en/latest/index.html) is a lua and enhanced version of [[Environment Modules]].
 
 They have the same usage. But their module files are different.
 
 Go to check my GitHub repository: [Justype/modules](https://github.com/Justype/modules)
 
-# Quick Examples
+## Quick Examples
 
 - `module avail`
 - `module load software`
 - `module unload software`
 - `module purge` (unload all)
 
-# Custom lua script
+## Custom lua script
 
 The most important part is:
 
@@ -76,7 +76,7 @@ conflict(app_name)
 
 ```
 
-# References
+## References
 
 - [https://lmod.readthedocs.io/en/latest/index.html](https://lmod.readthedocs.io/en/latest/index.html)
 - [https://lmod.readthedocs.io/en/latest/100_modulefile_examples.html](https://lmod.readthedocs.io/en/latest/100_modulefile_examples.html)

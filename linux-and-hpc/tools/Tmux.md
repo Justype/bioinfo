@@ -8,11 +8,11 @@
 
 ## Key Components
 
-|**Session**|**Window**|**Pane**|
-|---|---|---|
-|Top-level container|Workspace in a session|Subdivision of a window|
-|Group related tasks|Manage separate tasks|Multitask within a window|
-|`tmux switch-session`|`Ctrl+b`, `n/p`|`Ctrl+b`, arrow keys|
+| Session               | Window                 | Pane                      |
+| --------------------- | ---------------------- | ------------------------- |
+| Top-level container   | Workspace in a session | Subdivision of a window   |
+| Group related tasks   | Manage separate tasks  | Multitask within a window |
+| `tmux switch-session` | `Ctrl+b`, `n/p`        | `Ctrl+b`, arrow keys      |
 
 ![tmux pane](https://i.imgur.com/cO8SnPv.png)
 
@@ -29,43 +29,43 @@
 
 ### General Navigation
 
-|**Action**|**Shortcut**|
-|---|---|
-|Detach session|`Ctrl+b`, `d`|
-|List sessions|`tmux list-sessions`|
-|Attach to a session|`tmux attach -t name`|
-|Switch session|`tmux switch -t name`|
+| Action              | Shortcut              |
+| ------------------- | --------------------- |
+| Detach session      | `Ctrl+b`, `d`         |
+| List sessions       | `tmux list-sessions`  |
+| Attach to a session | `tmux attach -t name` |
+| Switch session      | `tmux switch -t name` |
 
 ### Window Management
 
-|**Action**|**Shortcut**|
-|---|---|
-|Create new window|`Ctrl+b`, `c`|
-|Next window|`Ctrl+b`, `n`|
-|Previous window|`Ctrl+b`, `p`|
-|List windows|`Ctrl+b`, `w`|
-|Rename window|`Ctrl+b`, `,`|
-|Close current window|`Ctrl+b`, `&`|
+| Action               | Shortcut      |
+| -------------------- | ------------- |
+| Create new window    | `Ctrl+b`, `c` |
+| Next window          | `Ctrl+b`, `n` |
+| Previous window      | `Ctrl+b`, `p` |
+| List windows         | `Ctrl+b`, `w` |
+| Rename window        | `Ctrl+b`, `,` |
+| Close current window | `Ctrl+b`, `&` |
 
 ### Pane Management
 
-|**Action**|**Shortcut**|
-|---|---|
-|Split vertically|`Ctrl+b`, `"`|
-|Split horizontally|`Ctrl+b`, `%`|
-|Switch panes|`Ctrl+b`, then arrow|
-|Resize pane|`Ctrl+b`, hold arrow|
-|Close current|`Ctrl+b`, `x`|
+| Action             | Shortcut             |
+| ------------------ | -------------------- |
+| Split vertically   | `Ctrl+b`, `"`        |
+| Split horizontally | `Ctrl+b`, `%`        |
+| Switch panes       | `Ctrl+b`, then arrow |
+| Resize pane        | `Ctrl+b`, hold arrow |
+| Close current      | `Ctrl+b`, `x`        |
 
 ### Copy Mode
 
-|**Action**|**Shortcut**|
-|---|---|
-|Enter copy mode|`Ctrl+b`, `[`|
-|Scroll|Arrow keys|
-|Search|`/`|
-|Copy text|`Space`, then `Enter`|
-|Paste copied text|`Ctrl+b`, `]`|
+| Action            | Shortcut              |
+| ----------------- | --------------------- |
+| Enter copy mode   | `Ctrl+b`, `[`         |
+| Scroll            | Arrow keys            |
+| Search            | `/`                   |
+| Copy text         | `Space`, then `Enter` |
+| Paste copied text | `Ctrl+b`, `]`         |
 
 ## Useful Configs in `.tmux.conf`
 
@@ -76,6 +76,6 @@ set -g mouse on
 set -s set-clipboard on
 ```
 
-# References
+## References
 
 - [https://tmuxcheatsheet.com/](https://tmuxcheatsheet.com/)

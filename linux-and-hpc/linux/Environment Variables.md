@@ -9,22 +9,22 @@
 
 PATH: `export PATH=/abs/path/to/directory:$PATH`
 
-### Usage:
+## Usage:
 
 - **System Configuration**: Control system behavior (e.g., paths, locale, user settings).
 - **User Customization**: Allow users to modify their environment, like setting default editor.
 - **Process Settings**: Provide runtime parameters to applications and scripts.
 
-### Common Environment Variables
+## Common Environment Variables
 
-|**Variable**|**Description**|**Example**|
-|---|---|---|
-|`PATH`|Directories to search for executable files|`/usr/local/bin:/usr/bin`|
-|`HOME`|Path to the current user's home directory|`/home/user`|
-|`USER`|The name of the current logged-in user|`user`|
-|`PWD`|Current working directory|`/home/user/projects`|
+| Variable | Description                                | Example                   |
+| -------- | ------------------------------------------ | ------------------------- |
+| `PATH`   | Directories to search for executable files | `/usr/local/bin:/usr/bin` |
+| `HOME`   | Path to the current user's home directory  | `/home/user`              |
+| `USER`   | The name of the current logged-in user     | `user`                    |
+| `PWD`    | Current working directory                  | `/home/user/projects`     |
 
-### Setting Environment Variables
+## Setting Environment Variables
 
 - **Temporary (Session-only)**:
 
@@ -46,11 +46,11 @@ After editing `~/.bashrc`, reload it:
 source ~/.bashrc
 ```
 
-### 4. Accessing Environment Variables
+## Accessing Environment Variables
 
 - Print value: `echo $VAR_NAME`
 - List all environment variables `env` or `printenv`
 
-### 5. Unsetting Variables
+## Unsetting Variables
 
 - To remove a variable: `unset VAR_NAME`

@@ -26,9 +26,10 @@ Clusters are managed with job schedulers (like [[Slurm]]) that distribute comput
 - Controller: `slurmctld`
 - Database: `slurmdbd`
 - Compute Nodes: `slurmd`
+
 ![Slurm Arch](https://slurm.schedmd.com/arch.gif)
 
-# References
+## References
 
 - [https://cl.indiana.edu/Supercomputing_at_IU.pdf](https://cl.indiana.edu/Supercomputing_at_IU.pdf)
 - [https://www.ibm.com/topics/hpc](https://www.ibm.com/topics/hpc)

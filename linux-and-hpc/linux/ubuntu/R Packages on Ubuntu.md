@@ -1,16 +1,15 @@
 #linux #ubuntu #R 
 
-- **Error**: failed to build the package
-- **Cause**: Ubuntu packages not installed
-- **Solution**: `sudo apt install`
 
----
+> [!bug] Failed to build the R package
+> - **Cause**: Ubuntu packages not installed
+> - **Solution**: `sudo apt install`
 
 How to know which package you want to install?
 
 2 conditions:
 
-1. The R will tell you which packages you need to install, like: `apt install <package name>`
+1. [[R]] will tell you which packages you need to install, like: `apt install <package name>`
 2. Find it by yourself
     1. Find which step you got the error
     2. Search for the missing library
@@ -44,7 +43,7 @@ In file included from /workspace/lab/hanlab/software/bin/conda/envs/r44/x86_64-c
                  from /usr/include/x86_64-linux-gnu/curl/curl.h:35,
                  from <stdin>:1:
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:146:55: error: missing binary operator before token "("
-  146 | #if __USE_FORTIFY_LEVEL == 3 && (__glibc_clang_prereq (9, 0)                  \\
+  146 | #if __USE_FORTIFY_LEVEL == 3 && (__glibc_clang_prereq (9, 0)                  
       |                                                       ^
 /usr/include/x86_64-linux-gnu/sys/cdefs.h:634:49: error: missing binary operator before token "("
   634 | #if __GNUC_PREREQ (4,8) || __glibc_clang_prereq (3,5)

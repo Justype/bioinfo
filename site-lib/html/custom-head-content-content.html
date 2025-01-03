@@ -1,0 +1,28 @@
+<script>
+function updateFooterContent() {
+  // Replace the content of the footer
+  document.querySelector('.footer').innerHTML = `
+  <hr style="margin-top: 8em; margin-bottom: 0em;"/>
+  <table style="border: none; border-collapse: collapse;"><tr>
+    <td style="border: none;  white-space: normal;">
+      <img alt=logo src="https://i.imgur.com/HwB8OVb.png" width=64 />
+    </td>
+    <td style="border: none; white-space: normal;" ><div>
+      © 2025 <a href="https://github.com/Justype" class="external-link">Justype</a><br/>Licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="external-link">CC BY-NC-SA 4.0</a><br/>GitHub Repo: <a href="https://github.com/Justype/bioinfo" class="external-link">Justype/bioinfo</a>
+    </div></td>
+  </tr></table>
+  `;
+}
+function updateExternalLinks() {
+  // Update external links to open in a new tab
+  document.querySelectorAll('a.external-link').forEach(a => {
+    if (a.hostname !== location.hostname) {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    }
+  });
+}
+
+ObsidianSite.onloadCallbacks.push(updateFooterContent);
+ObsidianSite.onloadCallbacks.push(updateExternalLinks);
+</script>
